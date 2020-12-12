@@ -10,7 +10,7 @@ To get started with the project, run `yarn bootstrap` in the root directory to i
 yarn bootstrap
 ```
 
-While developing, you can run the [example app](/example/) to test your changes.
+While developing, you can run the [showcase app](/example/) to test your changes.
 
 To start the packager:
 
@@ -18,13 +18,13 @@ To start the packager:
 yarn example start
 ```
 
-To run the example app on Android:
+To run the showcase app on Android:
 
 ```sh
 yarn example android
 ```
 
-To run the example app on iOS:
+To run the showcase app on iOS:
 
 ```sh
 yarn example ios
@@ -48,10 +48,6 @@ Remember to add tests for your change if possible. Run the unit tests by:
 ```sh
 yarn test
 ```
-
-To edit the Objective-C files, open `example/ios/AccessibilityEngineExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-accessibility-engine`.
-
-To edit the Kotlin files, open `example/android` in Android studio and find the source files at `reactnativeaccessibilityengine` under `Android`.
 
 ### Commit message convention
 
