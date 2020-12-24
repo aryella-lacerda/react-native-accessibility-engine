@@ -19,21 +19,20 @@
   <summary>
   Inform the user that the component behaves like a button
   </summary>
-  </br>
 
-### Aids in what type of accessibility:
+### Type of accessibility:
 
 Visual
 
 ### Why this is necessary:
 
-If it's sometimes dificult even for people with good vision to figure out that certain elements are actually buttons and not just labels or otherwise decorative, imagine how much harder it is for users with low or no vision. The `accessibilityRole` solves this problem by allowing us to explicitly tell users that use assistive tecnology that the component they've selected is, in fact, a button.
+If it's sometimes dificult even for people with good vision to figure out that certain elements are actually buttons and not just labels or otherwise decorative, imagine how much harder it is for users with low vision. The `accessibilityRole` solves this problem by allowing us to explicitly tell users that use assistive tecnology that the component they've selected is, in fact, a button.
 
 ### Can be implemented by:
 - setting the button's `accessibilityRole` prop to `button`.
 - setting the button's `accessibilityRole` prop to `imagebutton` in the event that your button is also an image.
 
-### Example
+### Example:
 
 ```tsx
   <Pressable accessibilityRole={'button'}>
@@ -46,9 +45,8 @@ If it's sometimes dificult even for people with good vision to figure out that c
   <summary>
   [iOS HIG] Give buttons a touchable area that measures at least 44x44 pt
   </summary>
-  </br>
 
-### Aids in what type of accessibility:
+### Type of accessibility:
 
 Motor
 
@@ -85,7 +83,7 @@ Have you ever tried to press a very small item on a mobile screen? Even if you h
   </summary>
   </br>
 
-### Aids in what type of accessibility:
+### Type of accessibility:
 
 Visual
 
@@ -104,12 +102,9 @@ The `accessible` props helps us here. It defines the button continer as a select
 ### Example:
 
 ```tsx
-
-return (
   <TouchableOpacity accessible> // The button can be selected.
     <Text>Press Me</Text> // The text within cannot. Pressing this will select the button instead.
   </TouchableOpacity>
-)
 ```
 
 </details>
@@ -118,7 +113,6 @@ return (
   <summary>
   Expose the button's enabled/disabled state to accessibility tools
   </summary>
-  </br>
 
 ### Aids in what type of accessibility:
 
@@ -126,14 +120,14 @@ Visual
 
 ### Why this is necessary:
 
-You're probably familiar with the button's `disabled` prop, which prevents users from triggering press events and supresses button-touch animations. Disabling a button will also generally change its design; perhaps the label will become more opaque or the background will turn gray. This informs the visual user that the button's disabled and usually prevents them from trying to press the button in the first place.
+You're probably familiar with the button's `disabled` prop, which prevents users from triggering press events and supresses button-touch animations. Disabling a button will also generally change its design. Maybe the label will become less opaque or the background will turn gray. This informs the visual user that the button's disabled and usually prevents them from trying to press the button in the first place.
 
-For users with visual disabilities, however, these changes mean little. The `accessibilityState` prop can lend a hand here. By passing in an object with a `disabled` key, you inform users with little to no visibility that this component has a disabled state and whether or not that state is active.
+For users with visual disabilities, however, these changes mean little. The `accessibilityState` prop can lend a hand here. By passing in an object with a `disabled` key, you inform users with low visibility that this component has a disabled state and whether or not that state is active.
 
 ### Can be implemented by:
 - setting the button's `accessibilityState` prop and providing a `disabled` key with a boolean value.
 
-### Example
+### Example:
 
 ```tsx
 const [isDisabled, setIsDisabled] = React.useState(false)
@@ -151,15 +145,14 @@ return (
   <summary>
   Add an accessibility label to buttons
   </summary>
-  </br>
 
-### Aids in what type of accessibility:
+### Type of accessibility:
 
 Visual
 
 ### Why this is necessary:
 
-This one is pretty simple. Visual users usually understand what a button does through its label, style, and/or icons. Assistive tools will generally read the text contained within the button as its label, but if your button contains nothing but an icon, what should be done then?
+This one is pretty simple. Visual users usually understand what a button does through its label, style, and/or icons. VoiceOver/TalkBack will generally read the text contained within the button as its label, but if your button contains nothing but an icon, what should be done then?
 
 The `accessibilityLabel` prop solves this problem. It explicitly defines a string that should be read aloud when the button is selected and is especially useful for buttons, icons, and button-icons.
 
@@ -177,7 +170,7 @@ From the iOS APG (adapted for React Native):
 - If your button does not contain any text, it's very important to set the `accessibilityLabel` prop manually.
 - When in doubt, set the `accessibilityLabel` prop manually.
 
-### Example
+### Example:
 
 ```tsx
   <TouchableOpacity style={styles.button} accessibilityLabel={'Like'}>
@@ -205,7 +198,6 @@ According to the [iOS APG](https://developer.apple.com/library/archive/documenta
   <summary>
   Add an accessibility hint to buttons
   </summary>
-  </br>
 
 ### Aids in what type of accessibility:
 
@@ -225,7 +217,7 @@ From the iOS APG (adapted for React Native):
 ### Can be implemented by:
 - setting the `accessibilityHint` prop
 
-### Example
+### Example:
 
 ```tsx
   <TouchableOpacity 
