@@ -1,3 +1,4 @@
-import Buttons from './buttonLabel';
+import ButtonLabel from './buttonLabel';
+import ButtonAccessible from './buttonAccessible';
 
-export { Buttons };
+export { ButtonLabel, ButtonAccessible };

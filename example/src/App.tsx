@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Buttons } from './examples';
+import { ButtonAccessible } from './examples';
 
 export default function App() {
-  return <Buttons />;
+  return <ButtonAccessible />;
 }
