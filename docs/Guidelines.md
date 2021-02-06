@@ -17,7 +17,7 @@
 
 <details>
   <summary>
-  Inform the user that the component behaves like a button
+  [x] Inform the user that the component behaves like a button
   </summary>
 
 ### Type of accessibility:
@@ -26,7 +26,7 @@ Visual
 
 ### Why this is necessary:
 
-If it's sometimes dificult even for people with good vision to figure out that certain elements are actually buttons and not just labels or otherwise decorative, imagine how much harder it is for users with low vision. The `accessibilityRole` solves this problem by allowing us to explicitly tell users that use assistive tecnology that the component they've selected is, in fact, a button.
+If it's sometimes dificult even for people with good vision to figure out that certain elements are actually buttons and not just labels or otherwise decorative, imagine how much harder it is for users with low vision. The `accessibilityRole` solves this problem by allowing us to explicitly tell users that make use of assistive tecnology that the component they've selected is, in fact, a button.
 
 ### Can be implemented by:
 - setting the button's `accessibilityRole` prop to `button`.
@@ -43,7 +43,7 @@ If it's sometimes dificult even for people with good vision to figure out that c
 
 <details>
   <summary>
-  [iOS HIG] Give buttons a touchable area that measures at least 44x44 pt
+  [ ] Give buttons a touchable area that measures at least 44x44 pt
   </summary>
 
 ### Type of accessibility:
@@ -79,7 +79,7 @@ Have you ever tried to press a very small item on a mobile screen? Even if you h
 
 <details>
   <summary>
-  Make only the button selectable, not the content within
+  [x] Make only the button selectable, not the content within
   </summary>
   </br>
 
@@ -111,7 +111,7 @@ The `accessible` props helps us here. It defines the button continer as a select
 
 <details>
   <summary>
-  Expose the button's enabled/disabled state to accessibility tools
+  [x] Expose the button's enabled/disabled state to accessibility tools
   </summary>
 
 ### Aids in what type of accessibility:
@@ -143,7 +143,7 @@ return (
 
 <details>
   <summary>
-  Add an accessibility label to buttons
+  [ ] Add an accessibility label to buttons
   </summary>
 
 ### Type of accessibility:
@@ -196,7 +196,7 @@ According to the [iOS APG](https://developer.apple.com/library/archive/documenta
 
 <details>
   <summary>
-  Add an accessibility hint to buttons
+  [ ] Add an accessibility hint to buttons
   </summary>
 
 ### Aids in what type of accessibility:
@@ -234,7 +234,7 @@ According to the [iOS APG](https://developer.apple.com/library/archive/documenta
 
 - **Very briefly describes the results.** Even though few components need hints, try to make the hints you do need as brief as possible. This decreases the amount of time users need to spend listening before they can use the element. However, avoid sacrificing clarity and good grammar for brevity. For example, changing “Adds a city” to “Adds city” doesn't significantly decrease the length of the hint, but does make it sound awkward and a bit less clear.
 
-- **Begins with a verb and omits the subject.** Conjugate your verbs declaritively, like “Plays”, and not imperatively, like “Play”. Avoid using the imperative because it can make the hint sound like a command. For example, you don’t want to tell users to “Play the song”, you want to tell them that tapping the element “Plays the song.”
+- **Begins with a verb and omits the subject.** Conjugate your verbs declaritively (like “Plays”) and not imperatively (like “Play”). Avoid using the imperative because it can make the hint sound like a command. For example, you don’t want to tell users to “Play the song”. You want to tell them that tapping the element “Plays the song.”
 
 - **Begins with a capitalized word and ends with a period.** Even though a hint is a phrase, not a sentence, ending the hint with a period helps VoiceOver/TalkBack speak it with the appropriate inflection.
 

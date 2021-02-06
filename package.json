@@ -46,19 +46,24 @@
     "@react-native-community/bob": "^0.16.2",
     "@react-native-community/eslint-config": "^2.0.0",
     "@release-it/conventional-changelog": "^1.1.4",
+    "@testing-library/jest-native": "^3.4.3",
     "@types/jest": "^26.0.0",
+    "@types/lodash.groupby": "^4.6.6",
     "@types/react": "^16.9.19",
     "@types/react-native": "0.62.13",
+    "@types/react-test-renderer": "^17.0.0",
+    "babel-jest": "^26.6.3",
     "commitlint": "^8.3.5",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
+    "jest": "^26.6.3",
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
     "react": "16.11.0",
     "react-native": "0.62.2",
+    "react-test-renderer": "^17.0.1",
     "release-it": "^13.5.8",
     "typescript": "^3.8.3"
   },
@@ -69,8 +74,12 @@
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
+      "<rootDir>/src/__tests__/assets",
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
     ]
   },
   "husky": {
@@ -119,7 +128,10 @@
       ]
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
@@ -130,6 +142,15 @@
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "lodash.groupby": "^4.6.0",
+    "react-native-measureme": "^0.0.2",
+    "react-sizeme": "^2.6.12"
   }
 }
