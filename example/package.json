@@ -6,7 +6,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start"
+    "start": "react-native start",
+    "test": "jest"
   },
   "dependencies": {
     "react": "16.11.0",
@@ -14,8 +15,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/runtime": "^7.9.6",
+    "@types/jest": "^26.0.19",
+    "@types/react-test-renderer": "^17.0.0",
+    "add": "^2.0.6",
     "babel-plugin-module-resolver": "^4.0.0",
-    "metro-react-native-babel-preset": "^0.59.0"
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "^17.0.1",
+    "yarn": "^1.22.10"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }
