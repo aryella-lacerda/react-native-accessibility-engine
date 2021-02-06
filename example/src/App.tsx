@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ButtonAccessible } from './examples';
+import { ButtonRole } from './examples';
 
 export default function App() {
-  return <ButtonAccessible />;
+  return <ButtonRole />;
 }

@@ -1,5 +1,5 @@
-import type { Rule } from '../types';
-import { isButton } from '../helpers';
+import type { Rule } from '../../types';
+import { isButton } from '../../helpers';
 
 const rule: Rule = {
   id: 'accessibility-role-button',
