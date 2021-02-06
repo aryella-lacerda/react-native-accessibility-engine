@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ButtonRole } from './examples';
+import { ButtonState } from './examples';
 
 export default function App() {
-  return <ButtonRole />;
+  return <ButtonState />;
 }
