@@ -1,15 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import { Label, Wrapper } from '../common';
 
 import Images from '../images';
-
-const Label = ({ text }: { text: string }) => (
-  <Text style={styles.label}>{text}</Text>
-);
-
-const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <View style={styles.wrapper}>{children}</View>
-);
 
 const Buttons = () => {
   return (
@@ -53,7 +46,7 @@ const Buttons = () => {
         </TouchableOpacity>
       </Wrapper>
 
-      <Wrapper>
+      {/* <Wrapper>
         <Label text={'Same text content + accessibility label'} />
         <TouchableOpacity style={styles.button} accessibilityLabel={'Test'}>
           <Text>Test</Text>
@@ -69,7 +62,7 @@ const Buttons = () => {
         <TouchableOpacity style={styles.button} accessibilityLabel={'Button'}>
           <Text>Test</Text>
         </TouchableOpacity>
-      </Wrapper>
+      </Wrapper> */}
     </View>
   );
 };
@@ -91,17 +84,5 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 20,
     width: 120,
-  },
-  label: {
-    textTransform: 'uppercase',
-    fontSize: 11,
-    textAlign: 'center',
-    marginBottom: 8,
-    fontWeight: '500',
-  },
-  wrapper: {
-    width: '70%',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
