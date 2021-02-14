@@ -1,21 +1,14 @@
-// import React from 'react';
-// import { Text, TouchableOpacity, TouchableHighlight } from 'react-native';
-// // import RNR from 'react-test-renderer';
-// import run from '../engine';
+import React from 'react';
+import { Image, TouchableOpacity } from 'react-native';
+import Img from './assets';
+import run from '../engine';
 
-// const Button = () => (
-//   <>
-//     <TouchableOpacity accessible={false}>
-//       <Text>Test</Text>
-//     </TouchableOpacity>
-//     <TouchableHighlight accessible={false}>
-//       <Text>Test</Text>
-//     </TouchableHighlight>
-//   </>
-// );
+const Button = () => (
+  <TouchableOpacity accessible={false}>
+    <Image source={Img.filledHeart['32px']} />
+  </TouchableOpacity>
+);
 
-// it('runs without error', () => {
-//   // expect(() => run(<Button />)).not.toThrow();
-// });
-
-test.todo('Test overall engine capabilities');
+it('should not have accessibility errors', () => {
+  expect(() => run(<Button />)).toThrow();
+});
