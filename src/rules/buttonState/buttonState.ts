@@ -6,10 +6,9 @@ const rule: Rule = {
   matcher: (node) => isButton(node.type),
   assertion: (node) => node.props.accessibilityState?.disabled !== undefined,
   help: {
-    problem:
-      "Expose the button's enabled/disabled state to accessibility tools.",
+    problem: "Expose the button's enabled/disabled state to the user",
     solution:
-      'Set the `accessibilityState` prop with an object containing a `disabled` key.',
+      "Set the 'accessibilityState' prop with an object containing a 'disabled' key",
     link: '',
   },
 };

@@ -6,6 +6,13 @@ import rules from '../rules';
 import type { Violation } from '../types';
 import { getComponentName } from '../helpers';
 
+class AccessibilityError extends Error {
+  constructor(message = '') {
+    super(message);
+    this.name = 'AccessibilityError';
+  }
+}
+
 const engine = (tree: React.ReactElement<any>, _rules = rules) => {
   let renderedTree = TestRenderer.create(tree);
   const violations: Violation[] = [];
@@ -25,7 +32,7 @@ const engine = (tree: React.ReactElement<any>, _rules = rules) => {
   }
 
   if (violations.length) {
-    throw new Error(generateError(violations));
+    throw new AccessibilityError(generateError(violations));
   }
 
   return violations;
@@ -50,7 +57,7 @@ const generateError = (violations: Violation[]): string => {
     errorString += `${pathString}\n`;
 
     for (const violation of violationsGroupedByPath[path]) {
-      errorString += ` · ${violation.problem}\n   ↳ ${violation.solution}\n`;
+      errorString += ` · ${violation.problem}\n   ↳  ${violation.solution}\n`;
     }
   }
 

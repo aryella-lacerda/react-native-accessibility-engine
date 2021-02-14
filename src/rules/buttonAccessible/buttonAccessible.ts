@@ -8,9 +8,9 @@ const rule: Rule = {
     return node.props.accessible === false ? false : true;
   },
   help: {
-    problem:
-      'Make the button selectable ("accessible"), not the content within.',
-    solution: 'Set the `accessible` prop with a value of `true`.',
+    problem: 'Make the button accessible (selectable) to the user',
+    solution:
+      "Set the 'accessible' prop with a value of 'true' or remove it (buttons are accessible by default)",
     link: '',
   },
 };

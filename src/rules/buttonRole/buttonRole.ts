@@ -6,8 +6,8 @@ const rule: Rule = {
   matcher: (node) => isButton(node.type),
   assertion: (node) => node.props.accessibilityRole === 'button',
   help: {
-    problem: 'Inform the user that this component behaves like a button.',
-    solution: 'Set the `accessibilityRole` prop with a value of `button`.',
+    problem: 'Inform the user that this component behaves like a button',
+    solution: "Set the 'accessibilityRole' prop with a value of 'button'",
     link: '',
   },
 };

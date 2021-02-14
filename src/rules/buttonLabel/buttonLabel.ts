@@ -17,7 +17,7 @@ const rule: Rule = {
     problem:
       "The button doesn't have text content or an explicitly defined accessibility label",
     solution:
-      'Place a text component within the button or define an `accessibilityLabel` prop',
+      "Place a text component within the button or define an 'accessibilityLabel' prop",
     link: '',
   },
 };
