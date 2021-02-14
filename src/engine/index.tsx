@@ -41,6 +41,7 @@ const engine = (tree: React.ReactElement<any>, _rules = rules) => {
 const generateError = (violations: Violation[]): string => {
   let errorString = '\n';
 
+  // Each unique path represents a component in the component tree
   const violationsGroupedByPath = groupBy(violations, (violation) => {
     return violation.pathToComponent;
   });

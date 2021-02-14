@@ -1,3 +1,3 @@
-import run from './engine';
+import runAccessibilityCheck from './engine';
 
-export default { run };
+export default runAccessibilityCheck;
