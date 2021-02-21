@@ -63,7 +63,6 @@
     "prettier": "^2.0.5",
     "react": "16.11.0",
     "react-native": "0.62.2",
-    "react-test-renderer": "^17.0.1",
     "release-it": "^13.5.8",
     "typescript": "^3.8.3"
   },
@@ -155,7 +154,6 @@
   },
   "dependencies": {
     "lodash.groupby": "^4.6.0",
-    "react-native-measureme": "^0.0.2",
-    "react-sizeme": "^2.6.12"
+    "react-test-renderer": "^17.0.1"
   }
 }
