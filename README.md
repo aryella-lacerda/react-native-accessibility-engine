@@ -1,54 +1,81 @@
+<div align="center">
+  <img src="assets/showcase-horizontal.png" alt="React Native Accessibility Engine" />
+</div>
 
-<center>
-<h1>
+<h1 align="center">
 React Native Accessibility Engine
 </h1> 
 
-<h3>
-Make accessibility-related assertions on React Native code using React Test Renderer.
+<h3 align="center">
+Make accessibility-related assertions in React Native
 </h3>
-</center>
 
-## Status
+<div align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+  <img src="https://img.shields.io/badge/contributors-welcome-blue" />
+</div>
 
-Unreleased. Contributors welcome! 😄
+## Table of Contents
+
+- [Intro](#intro)
+- [Goals](#goals)
+- [Installation](#installation)
+- [Contributing](#contributing)
+
 ## Intro
 
-The React Native ecosystem is massive, but it's still lagging behind React Web and the more general web ecosystem when it comes to accessibility tools and best-practice guides. As mobile developers, we are still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. 
-
-In React Native, we also face the challenge of adhering to the accessibility guidelines of 2+ platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical guides on the best use of this API, which means there are few resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about what makes an app accessible or what accessibility even *is*.
+The React Native ecosystem is massive, but it's still lagging behind React Web when it comes to accessibility tools and best-practice guides. As mobile developers, we are still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical guides on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about *what makes* an app accessible or what accessibility even *is*.
 
 This project aims to help make bridging that gap a little easier.
 
 ## Goals
 
-- Keep it open-source
-- Create an engine capable of traversing a component tree making accessibility-related checks and then generating a useful report
+- Create an engine capable of traversing a component tree making accessibility-related checks
 - Use [React Test Render](https://reactjs.org/docs/test-renderer.html) for rendering and traversing because it'll probably already be installed in most apps and is pretty easy to use
-- Create an app to showcase how to pass every check using RN's Acessibility API
+- Create an app to showcase accessiblity best-practices
+- Keep it open-source!
 
 ## Roadmap
 
-### v1
+For version v1.1.0:
 
-- [ ] Compile list of initial rules and their sources
-- [ ] Create rule/check object
-- Needs id, matcher, assertion, and description at least
-- Matchers need to be React Test Renderer's `findAll` callback
-- For version 1, it's simpler to implement binary logic: pass or did not pass assertion. In future, add severity scale.
-- [ ] Create report object
-- Report only on failed assertions?
-- [ ] Create showcase app
-- Currently our example app is still React Native's default screen
-- [ ] Achieve at least 70% test coverage
-- [ ] Implement version 1 of engine
+- Expand rule list to cover a wider range of components and situations
+- Document the rules currently available and the sources they are based on
+- Create a `useAccessibleSize` hook to throw warnings at runtime (place in another repo?) about interactive components that don't meet minimum size requirements
 
 ## Installation
 
 ```sh
-npm install react-native-accessibility-engine
+npm install react-native-accessibility-engine --save-dev
+// or
+yarn add react-native-accessibility-engine --dev
 ```
+
+## Usage
+
+```typescript
+import React from 'react';
+import { Image, TouchableOpacity } from 'react-native';
+import Icons from './assets';
+import AccessibilityEngine from 'react-native-accessibility-engine';
+
+const Button = () => (
+  <TouchableOpacity accessible={false}>
+    <Image source={Icons.filledHeart['32px']} />
+  </TouchableOpacity>
+);
+
+it('should not have accessibility errors', () => {
+  expect(() => AccessibilityEngine.check(<Button />)).not.toThrow();
+});
+
+```
+
 ## Contributing
+
+I certainly don't know everything there is to know about accessibility, so I extend the same invitation to you that W3C extended to all of us earlier this year: if you are an evaluator, developer, designer, project manager, policy maker, person with disabilities, or any other interested party - take a look! If you can, contribute.
+
+There's always time to make things better than they are today. ♥️
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
