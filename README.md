@@ -41,6 +41,7 @@ For version v1.1.0:
 
 - Expand rule list to cover a wider range of components and situations
 - Document the rules currently available and the sources they are based on
+- Make exmaple app accessible
 - Create a `useAccessibleSize` hook to throw warnings at runtime (place in another repo?) about interactive components that don't meet minimum size requirements
 
 ## Installation
@@ -73,9 +74,7 @@ it('should not have accessibility errors', () => {
 
 ## Contributing
 
-I certainly don't know everything there is to know about accessibility, so I extend the same invitation to you that W3C extended to all of us earlier this year: if you are an evaluator, developer, designer, project manager, policy maker, person with disabilities, or any other interested party - take a look! If you can, contribute.
-
-There's always time to make things better than they are today. ♥️
+I certainly don't know everything there is to know about accessibility. If you're an evaluator, developer, designer, project manager, policy maker, person with disabilities, or any other interested party - take a look! And if you can, contribute. ♥️
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
