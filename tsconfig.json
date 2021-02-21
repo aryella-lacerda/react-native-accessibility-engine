@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "react-native-accessibility-engine": ["./src/index"]
+      "react-native-accessibility-engine": ["./src/index"],
+      "tests/*": ["./src/__tests__/*"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

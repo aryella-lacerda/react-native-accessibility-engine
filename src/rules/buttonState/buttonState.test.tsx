@@ -1,11 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import rule from './buttonState';
-import engine from '../../engine';
-import TestAssets from '../../__tests__/assets';
+import AccessibilityEngine from 'react-native-accessibility-engine';
+import TestAssets from 'tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return engine(component, [rule]);
+  return AccessibilityEngine.check(component, [rule]);
 };
 
 // To inspect these components, run the example app under "Rules -> Button State"
