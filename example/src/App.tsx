@@ -1,6 +1,11 @@
+import { NavigationContainer } from '@react-navigation/native';
 import * as React from 'react';
-import { ButtonState } from './examples';
+import RootNavigator from './navigation/RootNavigator';
 
 export default function App() {
-  return <ButtonState />;
+  return (
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  );
 }

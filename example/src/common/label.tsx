@@ -9,10 +9,9 @@ export default Label;
 
 const styles = StyleSheet.create({
   label: {
-    textTransform: 'uppercase',
-    fontSize: 11,
+    fontSize: 13,
     textAlign: 'center',
     marginBottom: 8,
-    fontWeight: '500',
+    fontWeight: '400',
   },
 });
