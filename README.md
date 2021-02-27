@@ -20,20 +20,21 @@ Make accessibility-related assertions in React Native
 - [Intro](#intro)
 - [Goals](#goals)
 - [Installation](#installation)
+- [Limitations](#limitations)
 - [Contributing](#contributing)
 
 ## Intro
 
-The React Native ecosystem is massive, but it's still lagging behind React Web when it comes to accessibility tools and best-practice guides. As mobile developers, we are still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical guides on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about *what makes* an app accessible or what accessibility even *is*.
+The React Native ecosystem is *massive* but it's still lagging behind React Web when it comes to accessibility tools. On top of that, as mobile developers, we're still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical tutorials on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about what makes an app accessible or what accessibility even *is*.
 
-This project aims to help make bridging that gap a little easier.
+This project aims to make solving these problems a little easier.
 
 ## Goals
 
-- Create an engine capable of traversing a component tree making accessibility-related checks
-- Use [React Test Render](https://reactjs.org/docs/test-renderer.html) for rendering and traversing because it'll probably already be installed in most apps and is pretty easy to use
-- Create an app to showcase accessiblity best-practices
-- Keep it open-source!
+- [x] Create an engine capable of traversing a component tree making accessibility-related checks
+- [x] Use [React Test Render](https://reactjs.org/docs/test-renderer.html) for rendering and traversing because it'll probably already be installed in most apps and is pretty easy to use
+- [x] Create an app to showcase accessiblity best-practices
+- [x] Keep it open-source!
 
 ## Roadmap
 
@@ -71,6 +72,10 @@ it('should not have accessibility errors', () => {
 });
 
 ```
+
+## Limitations
+
+Though the goal of this project is eventually to cover a wide variety of components and situations, v1.0.0 only covers button-components (as in, the Pressable/Touchables).
 
 ## Contributing
 
