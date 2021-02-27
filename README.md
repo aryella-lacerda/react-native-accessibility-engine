@@ -32,7 +32,6 @@ This project aims to make solving these problems a little easier.
 ## Goals
 
 - [x] Create an engine capable of traversing a component tree making accessibility-related checks
-- [x] Use [React Test Render](https://reactjs.org/docs/test-renderer.html) for rendering and traversing because it'll probably already be installed in most apps and is pretty easy to use
 - [x] Create an app to showcase accessiblity best-practices
 - [x] Keep it open-source!
 
