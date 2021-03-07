@@ -1,0 +1,37 @@
+name: Code quality
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install lib dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false # Better for building libraries
+
+      - name: Test code
+        run: yarn test --coverage
+
+      - name: Upload code coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Lint commit message
+        uses: wagoid/commitlint-github-action@v1
+
+      - name: Lint code
+        run: yarn lint
+      
+      - name: Typecheck code
+        run: yarn typescript
+
