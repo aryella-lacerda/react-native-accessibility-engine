@@ -11,8 +11,12 @@ Make accessibility-related assertions in React Native
 </h3>
 
 <div align="center">
+  <img alt="npm" src="https://img.shields.io/npm/v/react-native-accessibility-engine">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
-  <img src="https://img.shields.io/badge/contributors-welcome-blue" />
+  <img src="https://img.shields.io/badge/contributors-welcome-blue" />  
+  <a href="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine">
+    <img src="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine/branch/main/graph/badge.svg?token=GQNZ4HXN7Q"/>
+  </a>
 </div>
 
 ## Table of Contents
@@ -37,7 +41,7 @@ This project aims to make solving these problems a little easier.
 
 ## Roadmap
 
-For version v1.1.0:
+For version v0.3.0:
 
 - Expand rule list to cover a wider range of components and situations
 - Document the rules currently available and the sources they are based on
