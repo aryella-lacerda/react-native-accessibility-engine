@@ -1,12 +1,14 @@
-name: Code quality
-
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  unit-test:
+  code-quality:
     runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
