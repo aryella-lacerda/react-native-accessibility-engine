@@ -1,13 +1,13 @@
 import buttonRole from './buttonRole';
 import buttonAccessible from './buttonAccessible';
-import buttonState from './buttonState';
+import disabledComponents from './disabledComponents';
 import buttonLabel from './buttonLabel';
 import sliderRole from './sliderRole';
 
 const rules = [
   buttonRole,
   buttonAccessible,
-  buttonState,
+  disabledComponents,
   buttonLabel,
   sliderRole,
 ];
