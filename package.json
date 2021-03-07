@@ -17,7 +17,9 @@
     "!lib/typescript/example",
     "!**/__tests__",
     "!**/__fixtures__",
-    "!**/__mocks__"
+    "!**/__mocks__",
+    "!**/*.test.ts",
+    "!**/*.test.tsx"
   ],
   "scripts": {
     "test": "jest",
@@ -90,7 +92,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn typescript"
+      "pre-commit": "yarn lint && yarn test && yarn typescript"
     }
   },
   "commitlint": {
