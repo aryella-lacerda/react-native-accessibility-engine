@@ -3,6 +3,7 @@ import ButtonAccessible from './buttonAccessible';
 import ButtonRole from './buttonRole';
 import ButtonState from './buttonState';
 import LinkRoleMissing from './link-role-missing';
+import LinkRoleMisused from './link-role-misused';
 
 export type ScreensParamList = {
   TestingGround: undefined;
@@ -11,6 +12,7 @@ export type ScreensParamList = {
   ButtonRole: undefined;
   ButtonState: undefined;
   LinkRoleMissing: undefined;
+  LinkRoleMisused: undefined;
 };
 
 interface ScreenProps {
@@ -60,7 +62,15 @@ const screens: ScreenProps[] = [
     component: LinkRoleMissing,
     key: 'linkRoleMissing',
     options: {
-      title: 'Link - Missing Role',
+      title: 'Link Role Missing',
+    },
+  },
+  {
+    name: 'LinkRoleMisused',
+    component: LinkRoleMisused,
+    key: 'linkRoleMisused',
+    options: {
+      title: 'Link Role Misused',
     },
   },
 ];

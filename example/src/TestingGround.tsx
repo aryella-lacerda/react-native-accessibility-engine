@@ -36,6 +36,11 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
         property: 'link-role-missing',
         onPress: () => navigation.navigate('LinkRoleMissing'),
       },
+      {
+        component: 'Link',
+        property: 'link-role-misused',
+        onPress: () => navigation.navigate('LinkRoleMisused'),
+      },
     ];
   }, [navigation]);
 
