@@ -4,6 +4,7 @@ import disabledComponents from './disabledComponents';
 import buttonLabel from './buttonLabel';
 import sliderRole from './sliderRole';
 import sliderValue from './sliderValue';
+import linkRoleMissing from './link-role-missing';
 
 const rules = [
   buttonRole,
@@ -12,6 +13,7 @@ const rules = [
   buttonLabel,
   sliderRole,
   sliderValue,
+  linkRoleMissing,
 ];
 
 export default rules;
