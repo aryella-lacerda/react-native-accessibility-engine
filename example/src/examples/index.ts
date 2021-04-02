@@ -2,6 +2,7 @@ import ButtonLabel from './buttonLabel';
 import ButtonAccessible from './buttonAccessible';
 import ButtonRole from './buttonRole';
 import ButtonState from './buttonState';
+import LinkRoleMissing from './link-role-missing';
 
 export type ScreensParamList = {
   TestingGround: undefined;
@@ -9,11 +10,13 @@ export type ScreensParamList = {
   ButtonLabel: undefined;
   ButtonRole: undefined;
   ButtonState: undefined;
+  LinkRoleMissing: undefined;
 };
 
 interface ScreenProps {
   name: keyof ScreensParamList;
   component: React.ReactNode;
+  key: string;
   options: {
     title: string;
   };
@@ -23,6 +26,7 @@ const screens: ScreenProps[] = [
   {
     name: 'ButtonLabel',
     component: ButtonLabel,
+    key: 'buttonLabel',
     options: {
       title: 'Button - Label',
     },
@@ -30,6 +34,7 @@ const screens: ScreenProps[] = [
   {
     name: 'ButtonAccessible',
     component: ButtonAccessible,
+    key: 'buttonAccessible',
     options: {
       title: 'Button - Accessible',
     },
@@ -37,6 +42,7 @@ const screens: ScreenProps[] = [
   {
     name: 'ButtonRole',
     component: ButtonRole,
+    key: 'buttonRole',
     options: {
       title: 'Button - Role',
     },
@@ -44,8 +50,17 @@ const screens: ScreenProps[] = [
   {
     name: 'ButtonState',
     component: ButtonState,
+    key: 'buttonState',
     options: {
       title: 'Button - State',
+    },
+  },
+  {
+    name: 'LinkRoleMissing',
+    component: LinkRoleMissing,
+    key: 'linkRoleMissing',
+    options: {
+      title: 'Link - Missing Role',
     },
   },
 ];

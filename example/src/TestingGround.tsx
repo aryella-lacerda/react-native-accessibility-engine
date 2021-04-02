@@ -31,12 +31,18 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
         property: 'accessibilityState',
         onPress: () => navigation.navigate('ButtonState'),
       },
+      {
+        component: 'Link',
+        property: 'link-role-missing',
+        onPress: () => navigation.navigate('LinkRoleMissing'),
+      },
     ];
   }, [navigation]);
 
   return (
     <FlatList
       data={data}
+      keyExtractor={(item) => item.property}
       renderItem={({ item }) => <Card {...item} />}
       ItemSeparatorComponent={Separator}
       ListHeaderComponent={Header}
