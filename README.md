@@ -17,6 +17,9 @@ Make accessibility-related assertions in React Native
   <a href="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine">
     <img src="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine/branch/main/graph/badge.svg?token=GQNZ4HXN7Q"/>
   </a>
+  <a href="https://github.com/aryella-lacerda/react-native-accessibility-engine/actions/workflows/release.yml">
+    <img src="https://github.com/aryella-lacerda/react-native-accessibility-engine/actions/workflows/release.yml/badge.svg"/>
+  </a>
 </div>
 
 ## Table of Contents
