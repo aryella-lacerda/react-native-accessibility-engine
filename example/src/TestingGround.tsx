@@ -14,32 +14,32 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
       {
         component: 'Button',
         property: 'accessible',
-        onPress: () => navigation.navigate('ButtonAccessibleRequired'),
+        onPress: () => navigation.navigate('ButtonAccessibleTest'),
       },
       {
         component: 'Button',
         property: 'accessibilityLabel',
-        onPress: () => navigation.navigate('ButtonLabelRequired'),
+        onPress: () => navigation.navigate('ButtonLabelTest'),
       },
       {
         component: 'Button',
         property: 'accessibilityRole',
-        onPress: () => navigation.navigate('ButtonRoleRequired'),
+        onPress: () => navigation.navigate('ButtonRoleTest'),
       },
       {
         component: 'Button',
         property: 'accessibilityState',
-        onPress: () => navigation.navigate('ButtonState'),
+        onPress: () => navigation.navigate('ButtonStateTest'),
       },
       {
         component: 'Link',
         property: 'link-role-required',
-        onPress: () => navigation.navigate('LinkRoleRequired'),
+        onPress: () => navigation.navigate('LinkRoleRequiredTest'),
       },
       {
         component: 'Link',
         property: 'link-role-misused',
-        onPress: () => navigation.navigate('LinkRoleMisused'),
+        onPress: () => navigation.navigate('LinkRoleMisusedTest'),
       },
     ];
   }, [navigation]);
