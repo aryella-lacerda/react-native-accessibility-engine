@@ -14,7 +14,7 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
       {
         component: 'Button',
         property: 'accessible',
-        onPress: () => navigation.navigate('ButtonAccessible'),
+        onPress: () => navigation.navigate('ButtonAccessibleRequired'),
       },
       {
         component: 'Button',

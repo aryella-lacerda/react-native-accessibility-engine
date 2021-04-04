@@ -1,5 +1,5 @@
 import ButtonLabelRequired from './buttonLabelRequired';
-import ButtonAccessible from './buttonAccessible';
+import ButtonAccessibleRequired from './buttonAccessibleRequired';
 import ButtonRoleRequired from './buttonRoleRequired';
 import ButtonState from './buttonState';
 import LinkRoleRequired from './link-role-required';
@@ -7,7 +7,7 @@ import LinkRoleMisused from './link-role-misused';
 
 export type ScreensParamList = {
   TestingGround: undefined;
-  ButtonAccessible: undefined;
+  ButtonAccessibleRequired: undefined;
   ButtonLabelRequired: undefined;
   ButtonRoleRequired: undefined;
   ButtonState: undefined;
@@ -34,9 +34,9 @@ const screens: ScreenProps[] = [
     },
   },
   {
-    name: 'ButtonAccessible',
-    component: ButtonAccessible,
-    key: 'buttonAccessible',
+    name: 'ButtonAccessibleRequired',
+    component: ButtonAccessibleRequired,
+    key: 'buttonAccessibleRequired',
     options: {
       title: 'Button - Accessible',
     },

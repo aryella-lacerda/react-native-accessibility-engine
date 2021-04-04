@@ -1,5 +1,5 @@
 import buttonRoleRequired from './button-role-required';
-import buttonAccessible from './buttonAccessible';
+import buttonAccessibleRequired from './button-accessible-required';
 import disabledStateRequired from './disabled-state-required';
 import buttonLabelRequired from './button-label-required';
 import adjustableRoleRequired from './adjustable-role-required';
@@ -9,7 +9,7 @@ import linkRoleMisused from './link-role-misused';
 
 const rules = [
   buttonRoleRequired,
-  buttonAccessible,
+  buttonAccessibleRequired,
   disabledStateRequired,
   buttonLabelRequired,
   adjustableRoleRequired,
