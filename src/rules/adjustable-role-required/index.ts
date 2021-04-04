@@ -2,7 +2,7 @@ import type { Rule } from '../../types';
 import { isSlider } from '../../helpers';
 
 const rule: Rule = {
-  id: 'accessibility-role-adjustable-required',
+  id: 'adjustable-role-required',
   matcher: (node) => isSlider(node),
   assertion: (node) => node.props.accessibilityRole === 'adjustable',
   help: {

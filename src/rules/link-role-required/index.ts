@@ -2,7 +2,7 @@ import type { Rule } from '../../types';
 import { isText } from '../../helpers';
 
 const rule: Rule = {
-  id: 'accessibility-role-link-required',
+  id: 'link-role-required',
   matcher: (node) => isText(node.type),
   assertion: (node) => {
     const { onPress, accessibilityRole } = node.props;

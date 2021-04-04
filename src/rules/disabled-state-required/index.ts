@@ -2,7 +2,7 @@ import type { Rule } from '../../types';
 import { canBeDisabled } from '../../helpers';
 
 const rule: Rule = {
-  id: 'disabled-accessibility-state-required',
+  id: 'disabled-state-required',
   matcher: (node) => canBeDisabled(node),
   assertion: (node) => node.props.accessibilityState?.disabled !== undefined,
   help: {

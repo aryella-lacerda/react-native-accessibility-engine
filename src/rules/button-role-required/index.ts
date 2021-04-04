@@ -2,7 +2,7 @@ import type { Rule } from '../../types';
 import { isButton } from '../../helpers';
 
 const rule: Rule = {
-  id: 'accessibility-role-button-required',
+  id: 'button-role-required',
   matcher: (node) => isButton(node.type),
   assertion: (node) => node.props.accessibilityRole === 'button',
   help: {
