@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Label, Wrapper } from '../common';
 
-const LinkRoleMissing = () => {
+const LinkRoleRequired = () => {
   return (
     <View style={styles.container}>
       <Wrapper>
@@ -29,7 +29,7 @@ const LinkRoleMissing = () => {
   );
 };
 
-export default LinkRoleMissing;
+export default LinkRoleRequired;
 
 const styles = StyleSheet.create({
   container: {

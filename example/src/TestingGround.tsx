@@ -33,8 +33,8 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
       },
       {
         component: 'Link',
-        property: 'link-role-missing',
-        onPress: () => navigation.navigate('LinkRoleMissing'),
+        property: 'link-role-required',
+        onPress: () => navigation.navigate('LinkRoleRequired'),
       },
       {
         component: 'Link',

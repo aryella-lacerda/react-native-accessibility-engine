@@ -2,7 +2,7 @@ import ButtonLabel from './buttonLabel';
 import ButtonAccessible from './buttonAccessible';
 import ButtonRole from './buttonRole';
 import ButtonState from './buttonState';
-import LinkRoleMissing from './link-role-missing';
+import LinkRoleRequired from './link-role-required';
 import LinkRoleMisused from './link-role-misused';
 
 export type ScreensParamList = {
@@ -11,7 +11,7 @@ export type ScreensParamList = {
   ButtonLabel: undefined;
   ButtonRole: undefined;
   ButtonState: undefined;
-  LinkRoleMissing: undefined;
+  LinkRoleRequired: undefined;
   LinkRoleMisused: undefined;
 };
 
@@ -58,9 +58,9 @@ const screens: ScreenProps[] = [
     },
   },
   {
-    name: 'LinkRoleMissing',
-    component: LinkRoleMissing,
-    key: 'linkRoleMissing',
+    name: 'LinkRoleRequired',
+    component: LinkRoleRequired,
+    key: 'linkRoleRequired',
     options: {
       title: 'Link Role Missing',
     },

@@ -4,7 +4,7 @@ import disabledComponents from './disabledComponents';
 import buttonLabel from './buttonLabel';
 import sliderRole from './sliderRole';
 import sliderValue from './sliderValue';
-import linkRoleMissing from './link-role-missing';
+import linkRoleRequired from './link-role-required';
 import linkRoleMisused from './link-role-misused';
 
 const rules = [
@@ -14,7 +14,7 @@ const rules = [
   buttonLabel,
   sliderRole,
   sliderValue,
-  linkRoleMissing,
+  linkRoleRequired,
   linkRoleMisused,
 ];
 
