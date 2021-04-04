@@ -7,7 +7,7 @@ const rule: Rule = {
   assertion: (node) => node.props.accessibilityRole === 'adjustable',
   help: {
     problem:
-      'If a component has a value that can be adjusted, inform the user that it is adjustable',
+      'If a component has a value that can be adjusted, we should inform the user that it is adjustable',
     solution: "Set the 'accessibilityRole' prop to 'adjustable'",
     link: '',
   },

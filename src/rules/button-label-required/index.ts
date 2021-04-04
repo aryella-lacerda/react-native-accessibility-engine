@@ -15,7 +15,7 @@ const rule: Rule = {
   },
   help: {
     problem:
-      "When the button has no text content, an accessibility label can't be inferred, so it should be explicitly defined",
+      "If a button has no text content, an accessibility label can't be inferred so we should explicitly define one",
     solution:
       "Place a text component within the button or define an 'accessibilityLabel' prop",
     link: '',

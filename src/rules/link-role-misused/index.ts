@@ -12,8 +12,7 @@ const rule: Rule = {
     return true;
   },
   help: {
-    problem:
-      "The 'link' accessibility role should only be used when text is clickable",
+    problem: "We should only use the 'link' role when text is clickable",
     solution:
       "Set the 'accessibilityRole' prop to 'text' or add an 'onPress' prop",
     link: '',

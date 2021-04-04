@@ -13,7 +13,7 @@ const rule: Rule = {
   },
   help: {
     problem:
-      'If a component has a value that can be adjusted, then inform the user of its min, max, and current value',
+      'If a component has a value that can be adjusted, we should inform the user of its min, max, and current value',
     solution:
       "Set the 'accessibilityValue' prop with an object: { min: ?, max: ?, now: ?}",
     link: '',
