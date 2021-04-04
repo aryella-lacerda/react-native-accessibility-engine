@@ -19,7 +19,7 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
       {
         component: 'Button',
         property: 'accessibilityLabel',
-        onPress: () => navigation.navigate('ButtonLabel'),
+        onPress: () => navigation.navigate('LabelRequiredForButton'),
       },
       {
         component: 'Button',
