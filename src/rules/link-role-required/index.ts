@@ -12,8 +12,10 @@ const rule: Rule = {
     return true;
   },
   help: {
-    problem: 'Inform the user that this component behaves like a link',
-    solution: "Set the 'accessibilityRole' prop with a value of 'link'",
+    problem:
+      'When text is clickable, we should inform the user that it behaves like a link',
+    solution:
+      "Set the 'accessibilityRole' prop to 'link' or remove the 'onPress' prop",
     link: '',
   },
 };
