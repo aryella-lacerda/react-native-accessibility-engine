@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from '@react-native-community/slider';
-import rule from './sliderRole';
+import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const run = (component: React.ReactElement<any>) => {
