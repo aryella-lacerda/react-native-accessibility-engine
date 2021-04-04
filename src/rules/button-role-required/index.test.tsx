@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
-import rule from './buttonRole';
+import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 import TestAssets from 'tests/assets';
 
