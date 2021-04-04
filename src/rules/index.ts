@@ -3,7 +3,7 @@ import buttonAccessible from './buttonAccessible';
 import disabledStateRequired from './disabled-state-required';
 import buttonLabelRequired from './button-label-required';
 import adjustableRoleRequired from './adjustable-role-required';
-import sliderValue from './sliderValue';
+import adjustableValueRequired from './adjustable-value-required';
 import linkRoleRequired from './link-role-required';
 import linkRoleMisused from './link-role-misused';
 
@@ -13,7 +13,7 @@ const rules = [
   disabledStateRequired,
   buttonLabelRequired,
   adjustableRoleRequired,
-  sliderValue,
+  adjustableValueRequired,
   linkRoleRequired,
   linkRoleMisused,
 ];
