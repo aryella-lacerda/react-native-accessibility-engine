@@ -1,4 +1,4 @@
-import LabelRequiredForButton from './labelRequiredForButton';
+import ButtonLabelRequired from './buttonLabelRequired';
 import ButtonAccessible from './buttonAccessible';
 import ButtonRoleRequired from './buttonRoleRequired';
 import ButtonState from './buttonState';
@@ -8,7 +8,7 @@ import LinkRoleMisused from './link-role-misused';
 export type ScreensParamList = {
   TestingGround: undefined;
   ButtonAccessible: undefined;
-  LabelRequiredForButton: undefined;
+  ButtonLabelRequired: undefined;
   ButtonRoleRequired: undefined;
   ButtonState: undefined;
   LinkRoleRequired: undefined;
@@ -26,9 +26,9 @@ interface ScreenProps {
 
 const screens: ScreenProps[] = [
   {
-    name: 'LabelRequiredForButton',
-    component: LabelRequiredForButton,
-    key: 'labelRequiredForButton',
+    name: 'ButtonLabelRequired',
+    component: ButtonLabelRequired,
+    key: 'buttonLabelRequired',
     options: {
       title: 'Button - Label',
     },

@@ -4,7 +4,7 @@ import { isButton } from '../../helpers';
 import { Text } from 'react-native';
 
 const rule: Rule = {
-  id: 'accessibility-label-required-for-button',
+  id: 'button-accessibility-label-required',
   matcher: (node) => isButton(node.type),
   assertion: (node) => {
     let textNode = getTextNode(node);
