@@ -44,12 +44,7 @@ This project aims to make solving these problems a little easier.
 
 ## Roadmap
 
-For version v0.3.0:
-
-- Expand rule list to cover a wider range of components and situations
-- Document the rules currently available and the sources they are based on
-- Make exmaple app accessible
-- Create a `useAccessibleSize` hook to throw warnings at runtime (place in another repo?) about interactive components that don't meet minimum size requirements
+The a look at our project board. 
 
 ## Installation
 
@@ -81,7 +76,11 @@ it('should not have accessibility errors', () => {
 
 ## Limitations
 
-Though the goal of this project is eventually to cover a wide variety of components and situations, v1.0.0 only covers button-components (as in, the Pressable/Touchables).
+Though the goal of this project is eventually to cover a wide variety of components and situations, v0.3.0 only covers:
+- button-components (as in, the Pressable/Touchables)
+- text links
+- sliders
+- components that can be distabled
 
 ## Contributing
 
