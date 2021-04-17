@@ -14,6 +14,8 @@ Make accessibility-related assertions in React Native
   <img alt="npm" src="https://img.shields.io/npm/v/react-native-accessibility-engine">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
   <img src="https://img.shields.io/badge/contributors-welcome-blue" />  
+  <img src="https://img.shields.io/badge/maintenance-active-green" /> 
+  <img src="https://img.shields.io/badge/support-ios|android-purple" />  
   <a href="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine">
     <img src="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine/branch/main/graph/badge.svg?token=GQNZ4HXN7Q"/>
   </a>
@@ -26,6 +28,7 @@ Make accessibility-related assertions in React Native
 
 - [Intro](#intro)
 - [Goals](#goals)
+- [Roadmap](#roadmap)
 - [Installation](#installation)
 - [Limitations](#limitations)
 - [Contributing](#contributing)
@@ -39,12 +42,12 @@ This project aims to make solving these problems a little easier.
 ## Goals
 
 - [x] Create an engine capable of traversing a component tree making accessibility-related checks
-- [x] Create an app to showcase accessiblity best-practices
+- [ ] Create an app to showcase accessiblity best-practices
 - [x] Keep it open-source!
 
 ## Roadmap
 
-The a look at our project board. 
+[The a look at our project board.](https://github.com/aryella-lacerda/react-native-accessibility-engine/projects/1)
 
 ## Installation
 
@@ -56,7 +59,7 @@ yarn add react-native-accessibility-engine --dev
 
 ## Usage
 
-```typescript
+```tsx
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import Icons from './assets';
@@ -76,17 +79,21 @@ it('should not have accessibility errors', () => {
 
 ## Limitations
 
-Though the goal of this project is eventually to cover a wide variety of components and situations, v0.3.0 only covers:
-- button-components (as in, the Pressable/Touchables)
-- text links
-- sliders
-- components that can be distabled
+Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. You can check out [the current list of rules and their descriptions here](./docs/rules-catalog.md). 
 
 ## Contributing
 
-I certainly don't know everything there is to know about accessibility. If you're an evaluator, developer, designer, project manager, policy maker, person with disabilities, or any other interested party - take a look! And if you can, contribute. ♥️
+<div>
+<img src="https://img.shields.io/badge/contributors-welcome-blue" />  
+<img src="https://img.shields.io/badge/maintenance-active-green" />  
+</div>
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+This project is totally open to questions, sugestions, corrections, and community pull requests. We've tried to make contributing as painless a process as possible. Take a look at our guides:
+
+- [How do I set up and run the project?](CONTRIBUTING.md)
+- [What's a rule anyway? How do I propose a new one?](./docs/proposing-rules.md)
+- [Where's the current rules catalog?](./docs/rules-catalog.md)
+- [Anything on the project roadmap I can help with?](https://github.com/aryella-lacerda/react-native-accessibility-engine/projects/1)
 
 ## License
 
