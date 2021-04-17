@@ -14,6 +14,8 @@ Make accessibility-related assertions in React Native
   <img alt="npm" src="https://img.shields.io/npm/v/react-native-accessibility-engine">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
   <img src="https://img.shields.io/badge/contributors-welcome-blue" />  
+  <img src="https://img.shields.io/badge/maintenance-active-green" /> 
+  <img src="https://img.shields.io/badge/support-ios|android-purple" />  
   <a href="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine">
     <img src="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine/branch/main/graph/badge.svg?token=GQNZ4HXN7Q"/>
   </a>
@@ -26,30 +28,27 @@ Make accessibility-related assertions in React Native
 
 - [Intro](#intro)
 - [Goals](#goals)
+- [Roadmap](#roadmap)
 - [Installation](#installation)
 - [Limitations](#limitations)
 - [Contributing](#contributing)
+- [Related Projects](#related-projects)
 
 ## Intro
 
-The React Native ecosystem is *massive* but it's still lagging behind React Web when it comes to accessibility tools. On top of that, as mobile developers, we're still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical tutorials on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about what makes an app accessible or what accessibility even *is*.
+The React Native ecosystem is *massive* but it's still lagging behind React Web when it comes to accessibility tools. As mobile developers, we're still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical tutorials on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about what makes an app accessible or what accessibility even *is*.
 
 This project aims to make solving these problems a little easier.
 
 ## Goals
 
 - [x] Create an engine capable of traversing a component tree making accessibility-related checks
-- [x] Create an app to showcase accessiblity best-practices
+- [ ] Create an app to showcase accessiblity best-practices
 - [x] Keep it open-source!
 
 ## Roadmap
 
-For version v0.3.0:
-
-- Expand rule list to cover a wider range of components and situations
-- Document the rules currently available and the sources they are based on
-- Make exmaple app accessible
-- Create a `useAccessibleSize` hook to throw warnings at runtime (place in another repo?) about interactive components that don't meet minimum size requirements
+[The a look at our project board.](https://github.com/aryella-lacerda/react-native-accessibility-engine/projects/1)
 
 ## Installation
 
@@ -61,7 +60,7 @@ yarn add react-native-accessibility-engine --dev
 
 ## Usage
 
-```typescript
+```tsx
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import Icons from './assets';
@@ -81,13 +80,27 @@ it('should not have accessibility errors', () => {
 
 ## Limitations
 
-Though the goal of this project is eventually to cover a wide variety of components and situations, v1.0.0 only covers button-components (as in, the Pressable/Touchables).
+Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. You can check out [the current list of rules and their descriptions here](./docs/rules-catalog.md). 
 
 ## Contributing
 
-I certainly don't know everything there is to know about accessibility. If you're an evaluator, developer, designer, project manager, policy maker, person with disabilities, or any other interested party - take a look! And if you can, contribute. ♥️
+<div>
+<img src="https://img.shields.io/badge/contributors-welcome-blue" />  
+<img src="https://img.shields.io/badge/maintenance-active-green" />  
+</div>
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+This project is totally open to questions, sugestions, corrections, and community pull requests. We've tried to make contributing as painless a process as possible. Take a look at our guides:
+
+- [How do I set up and run the project?](CONTRIBUTING.md)
+- [What's a rule anyway? How do I propose a new one?](./docs/proposing-rules.md)
+- [Where's the current rules catalog?](./docs/rules-catalog.md)
+- [Anything on the project roadmap I can help with?](https://github.com/aryella-lacerda/react-native-accessibility-engine/projects/1)
+
+## Related projects
+
+- [eslint-plugin-react-native-a11y](https://github.com/FormidableLabs/eslint-plugin-react-native-a11y) is an Eslint plugin that lints your components and accessibility-related props.
+- [axe-core](https://github.com/dequelabs/axe-core) is the project that inspired this one. It's a similiar accessbility engine made for HTML-based languages like React Web.
+- [storybook-addon-a11y](https://github.com/storybookjs/storybook/tree/next/addons/a11y) is a Storybook add-on that uses Axe under the hood and allows you to inspect your components for accessibility problems as you develop them in Storybook.
 
 ## License
 

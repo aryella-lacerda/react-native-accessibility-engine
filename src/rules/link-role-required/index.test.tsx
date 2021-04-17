@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import rule from './link-role-missing';
+import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const run = (component: React.ReactElement<any>) => {

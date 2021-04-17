@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import rule from './link-role-misused';
+import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const run = (component: React.ReactElement<any>) => {
@@ -33,13 +33,13 @@ describe('text component without an onPress prop', () => {
 });
 
 describe('text component with an onPress prop', () => {
-  // This problem is captured by the link-role-missing rule
+  // This problem is captured by the link-role-required rule
   it("doesn't throw if 'accessibilityRole' prop not defined", () => {
     const TestText = () => <Text onPress={() => {}}>This is a test.</Text>;
     expect(() => run(<TestText />)).not.toThrowError(rule.help.problem);
   });
 
-  // This problem is captured by the link-role-missing rule
+  // This problem is captured by the link-role-required rule
   it("doesn't throw if 'accessibilityRole' prop has a value other than 'link'", () => {
     const TestText = () => (
       <Text onPress={() => {}} accessibilityRole={'text'}>

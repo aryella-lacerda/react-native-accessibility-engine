@@ -4,7 +4,7 @@ import { isButton } from '../../helpers';
 import { Text } from 'react-native';
 
 const rule: Rule = {
-  id: 'accessibility-label-button',
+  id: 'button-label-required',
   matcher: (node) => isButton(node.type),
   assertion: (node) => {
     let textNode = getTextNode(node);
@@ -15,7 +15,7 @@ const rule: Rule = {
   },
   help: {
     problem:
-      "The button doesn't have text content or an explicitly defined accessibility label",
+      "If a button has no text content, an accessibility label can't be inferred so we should explicitly define one",
     solution:
       "Place a text component within the button or define an 'accessibilityLabel' prop",
     link: '',

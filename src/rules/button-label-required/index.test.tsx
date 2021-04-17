@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, Image } from 'react-native';
-import rule from './buttonLabel';
+import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 import TestAssets from 'tests/assets';
 

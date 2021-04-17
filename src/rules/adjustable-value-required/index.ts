@@ -2,7 +2,7 @@ import type { Rule } from '../../types';
 import { isSlider } from '../../helpers';
 
 const rule: Rule = {
-  id: 'accessibility-value-slider',
+  id: 'adjustable-value-required',
   matcher: (node) => isSlider(node),
   assertion: (node) => {
     return (
@@ -12,7 +12,8 @@ const rule: Rule = {
     );
   },
   help: {
-    problem: 'Inform the user of the value of this adjustable component',
+    problem:
+      'If a component has a value that can be adjusted, we should inform the user of its min, max, and current value',
     solution:
       "Set the 'accessibilityValue' prop with an object: { min: ?, max: ?, now: ?}",
     link: '',

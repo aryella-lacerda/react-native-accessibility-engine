@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import Slider from '@react-native-community/slider';
-import rule from './disabledComponents';
+import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 import TestAssets from 'tests/assets';
 

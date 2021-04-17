@@ -1,18 +1,18 @@
-import ButtonLabel from './buttonLabel';
-import ButtonAccessible from './buttonAccessible';
-import ButtonRole from './buttonRole';
-import ButtonState from './buttonState';
-import LinkRoleMissing from './link-role-missing';
-import LinkRoleMisused from './link-role-misused';
+import ButtonLabelTest from './button-label-test';
+import ButtonAccessibleTest from './button-accessible-test';
+import ButtonRoleTest from './button-role-test';
+import ButtonStateTest from './button-state-test';
+import LinkRoleRequiredTest from './link-role-required-test';
+import LinkRoleMisusedTest from './link-role-misused-test';
 
 export type ScreensParamList = {
   TestingGround: undefined;
-  ButtonAccessible: undefined;
-  ButtonLabel: undefined;
-  ButtonRole: undefined;
-  ButtonState: undefined;
-  LinkRoleMissing: undefined;
-  LinkRoleMisused: undefined;
+  ButtonAccessibleTest: undefined;
+  ButtonLabelTest: undefined;
+  ButtonRoleTest: undefined;
+  ButtonStateTest: undefined;
+  LinkRoleRequiredTest: undefined;
+  LinkRoleMisusedTest: undefined;
 };
 
 interface ScreenProps {
@@ -26,49 +26,49 @@ interface ScreenProps {
 
 const screens: ScreenProps[] = [
   {
-    name: 'ButtonLabel',
-    component: ButtonLabel,
-    key: 'buttonLabel',
+    name: 'ButtonLabelTest',
+    component: ButtonLabelTest,
+    key: 'buttonLabelTest',
     options: {
       title: 'Button - Label',
     },
   },
   {
-    name: 'ButtonAccessible',
-    component: ButtonAccessible,
-    key: 'buttonAccessible',
+    name: 'ButtonAccessibleTest',
+    component: ButtonAccessibleTest,
+    key: 'buttonAccessibleTest',
     options: {
       title: 'Button - Accessible',
     },
   },
   {
-    name: 'ButtonRole',
-    component: ButtonRole,
-    key: 'buttonRole',
+    name: 'ButtonRoleTest',
+    component: ButtonRoleTest,
+    key: 'buttonRoleTest',
     options: {
       title: 'Button - Role',
     },
   },
   {
-    name: 'ButtonState',
-    component: ButtonState,
-    key: 'buttonState',
+    name: 'ButtonStateTest',
+    component: ButtonStateTest,
+    key: 'buttonStateTest',
     options: {
       title: 'Button - State',
     },
   },
   {
-    name: 'LinkRoleMissing',
-    component: LinkRoleMissing,
-    key: 'linkRoleMissing',
+    name: 'LinkRoleRequiredTest',
+    component: LinkRoleRequiredTest,
+    key: 'linkRoleRequiredTest',
     options: {
       title: 'Link Role Missing',
     },
   },
   {
-    name: 'LinkRoleMisused',
-    component: LinkRoleMisused,
-    key: 'linkRoleMisused',
+    name: 'LinkRoleMisusedTest',
+    component: LinkRoleMisusedTest,
+    key: 'linkRoleMisusedTest',
     options: {
       title: 'Link Role Misused',
     },

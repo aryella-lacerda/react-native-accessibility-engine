@@ -1,6 +1,8 @@
 # Contributing
 
-We want this community to be friendly and respectful to each other. Please follow it in all your interactions with the project.
+First of all, thanks for taking the time to contribute to React Native Accessibility Engine. 😁 It's got some big goals and you're welcome to join the march and help make the React Native community a more accessible place.
+
+We want this community to be friendly and respectful to each other. Please that guide you in all your interactions regarding our project.
 
 ## Development workflow
 
@@ -10,7 +12,7 @@ To get started with the project, run `yarn bootstrap` in the root directory to i
 yarn bootstrap
 ```
 
-While developing, you can run the [showcase app](/example/) to test your changes.
+While developing, you can run the [testing app](/example/) to test your rules and inspect code changes using iOS's Accessibility Inspector or Android's Accessiblity Scanner.
 
 To start the packager:
 
@@ -18,13 +20,13 @@ To start the packager:
 yarn example start
 ```
 
-To run the showcase app on Android:
+To run the testing app on Android:
 
 ```sh
 yarn example android
 ```
 
-To run the showcase app on iOS:
+To run the testing app on iOS:
 
 ```sh
 yarn example ios
@@ -43,7 +45,7 @@ To fix formatting errors, run the following:
 yarn lint --fix
 ```
 
-Remember to add tests for your change if possible. Run the unit tests by:
+Remember to add tests for your changes and rule proposals whenever possible. Run the unit tests by:
 
 ```sh
 yarn test
@@ -135,7 +137,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 
 ### Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at `aryella.lacerda@gmail.com`. All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 
