@@ -35,10 +35,10 @@ jobs:
       - name: Prepend node path
         run: npm config set scripts-prepend-node-path auto
 
-      - name: Generate version number, commit, tag, and GitHub release
-        run: yarn release --ci
+      # - name: Generate version number, commit, tag, and GitHub release
+      #   run: yarn release --ci
 
-      - name: Publish to NPM
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish to NPM
+      #   uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_TOKEN }}
