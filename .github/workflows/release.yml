@@ -1,5 +1,4 @@
 on:
-  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -37,10 +36,9 @@ jobs:
         run: npm config set scripts-prepend-node-path auto
 
       - name: Generate version number, commit, tag, and GitHub release
-        run: yarn release --ci --dry-run
+        run: yarn release --ci
 
       - name: Publish to NPM
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          dry-run: true
