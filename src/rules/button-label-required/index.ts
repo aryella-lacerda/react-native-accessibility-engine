@@ -7,10 +7,12 @@ const rule: Rule = {
   id: 'button-label-required',
   matcher: (node) => isButton(node.type),
   assertion: (node) => {
-    let textNode = getTextNode(node);
-    if (!textNode) return false;
-    const textContent = textNode.props.children;
-    if (!textContent) return false;
+    const textNode = getTextNode(node);
+    const textContent = textNode?.props?.children;
+    const accessibilityLabel = node.props.accessibilityLabel;
+    if (!accessibilityLabel && !textContent){
+      return false; 
+    }
     return true;
   },
   help: {
