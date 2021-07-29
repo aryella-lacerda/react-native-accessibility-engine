@@ -42,6 +42,13 @@ it("doesn't throw if the button has text content", () => {
   expect(() => run(<Button />)).not.toThrow();
 });
 
+it("doesn't throw if the button has text content", () => {
+  const Button = () => (
+    <TouchableOpacity accessibilityLabel="Test"/>
+  );
+  expect(() => run(<Button />)).not.toThrow();
+});
+
 it("doesn't throw if the button has text + non-text content", () => {
   const Button = () => (
     <TouchableOpacity>
