@@ -10,8 +10,8 @@ const rule: Rule = {
     const textNode = getTextNode(node);
     const textContent = textNode?.props?.children;
     const accessibilityLabel = node.props.accessibilityLabel;
-    if (!accessibilityLabel && !textContent){
-      return false; 
+    if (!accessibilityLabel && !textContent) {
+      return false;
     }
     return true;
   },
