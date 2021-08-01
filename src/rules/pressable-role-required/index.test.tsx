@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, Text } from 'react-native';
 import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 import TestAssets from 'tests/assets';
@@ -20,7 +20,7 @@ it("throws if 'accessibilityRole' prop not defined", () => {
   expect(() => run(<Button />)).toThrowError(rule.help.problem);
 });
 
-it("throws if 'accessibilityRole' prop has a value other than 'button'", () => {
+it("throws if 'accessibilityRole' prop has a value other than 'button' or 'link'", () => {
   const Button = () => (
     <TouchableOpacity accessibilityRole={'text'}>
       <Image source={TestAssets.heart['32px']} />
@@ -34,6 +34,16 @@ it("doesn't throw if 'accessibilityRole' prop has the value 'button'", () => {
   const Button = () => (
     <TouchableOpacity accessibilityRole={'button'}>
       <Image source={TestAssets.heart['32px']} />
+    </TouchableOpacity>
+  );
+
+  expect(() => run(<Button />)).not.toThrowError(rule.help.problem);
+});
+
+it("doesn't throw if 'accessibilityRole' prop has the value 'link'", () => {
+  const Button = () => (
+    <TouchableOpacity accessibilityRole={'link'}>
+      <Text>This is a link.</Text>
     </TouchableOpacity>
   );
 
