@@ -4,7 +4,7 @@ import groupBy from 'lodash.groupby';
 
 import rules from '../rules';
 import type { Violation } from '../types';
-import { getComponentName } from '../helpers';
+import { getComponentName, isHidden } from '../helpers';
 
 class AccessibilityError extends Error {
   constructor(message = '') {
@@ -20,7 +20,15 @@ const engine = (tree: React.ReactElement<any>, _rules = rules) => {
   for (const rule of _rules) {
     const matchedComponents = renderedTree.root.findAll(rule.matcher);
     for (const component of matchedComponents) {
-      const didPassAssertion = rule.assertion(component);
+      let didPassAssertion = false;
+
+      // Skip checks on hidden components
+      if (isHidden(component)) {
+        didPassAssertion = true;
+      } else {
+        didPassAssertion = rule.assertion(component);
+      }
+
       // console.log(component);
       if (!didPassAssertion) {
         violations.push({
