@@ -4,7 +4,7 @@ import { isButton } from '../../helpers';
 import { Text } from 'react-native';
 
 const rule: Rule = {
-  id: 'button-label-required',
+  id: 'pressable-label-required',
   matcher: (node) => isButton(node.type),
   assertion: (node) => {
     const textNode = getTextNode(node);
