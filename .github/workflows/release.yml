@@ -12,40 +12,41 @@ jobs:
       - name: Print event
         run: echo "${{ toJson(github) }}"
 
-  # release:
-  #   if: github.event.pull_request.merged == true
-  #   runs-on: ubuntu-latest
+  release:
+    # Run only if pull request merged or release was manually triggered
+    if: github.event.pull_request.merged == true || github.event_name == workflow_dispatch
+    runs-on: ubuntu-latest
 
-  #   env:
-  #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  #   steps:
-  #     - name: Install SSH Client
-  #       uses: webfactory/ssh-agent@v0.5.3
-  #       with:
-  #         ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+    steps:
+      - name: Install SSH Client
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
-  #       with:
-  #         fetch-depth: 0
-  #         ssh-key: ${{ secrets.DEPLOY_KEY }}
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
+      #   with:
+      #     fetch-depth: 0
+      #     ssh-key: ${{ secrets.DEPLOY_KEY }}
 
-  #     - name: Install lib dependencies
-  #       run: yarn install
+      # - name: Install lib dependencies
+      #   run: yarn install
 
-  #     - name: Set Git credentials
-  #       run: |
-  #         git config user.email "aryella.lacerda@gmail.com"
-  #         git config user.name "Aryella"
+      # - name: Set Git credentials
+      #   run: |
+      #     git config user.email "aryella.lacerda@gmail.com"
+      #     git config user.name "Aryella"
 
-  #     - name: Prepend node path
-  #       run: npm config set scripts-prepend-node-path auto
+      # - name: Prepend node path
+      #   run: npm config set scripts-prepend-node-path auto
 
-  #     - name: Generate version number, commit, tag, and GitHub release
-  #       run: yarn release --ci
+      # - name: Generate version number, commit, tag, and GitHub release
+      #   run: yarn release --ci
 
-  #     - name: Publish to NPM
-  #       uses: JS-DevTools/npm-publish@v1
-  #       with:
-  #         token: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish to NPM
+      #   uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_TOKEN }}
