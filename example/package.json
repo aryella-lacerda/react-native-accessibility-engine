@@ -7,31 +7,33 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "clean": "react-native-clean-project"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
-    "react-native-gesture-handler": "^1.10.1",
-    "react-native-reanimated": "^1.13.2",
-    "react-native-safe-area-context": "^3.1.9",
-    "react-native-screens": "^2.17.1"
+    "react": "17.0.2",
+    "react-native": "0.64.2",
+    "react-native-gesture-handler": "1.10.3",
+    "react-native-reanimated": "1.13.2",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "2.18.1"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
     "@babel/preset-typescript": "7.13.0",
     "@babel/runtime": "7.13.10",
-    "@types/jest": "^26.0.19",
-    "@types/react-test-renderer": "^17.0.0",
-    "add": "^2.0.6",
-    "babel-plugin-module-resolver": "^4.0.0",
+    "@types/jest": "26.0.21",
+    "@types/react-test-renderer": "17.0.1",
+    "add": "2.0.6",
+    "babel-plugin-module-resolver": "4.1.0",
     "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "^17.0.1",
-    "yarn": "^1.22.10"
+    "metro-react-native-babel-preset": "0.64.0",
+    "react-native-clean-project": "^3.6.4",
+    "react-test-renderer": "17.0.2",
+    "yarn": "1.22.10"
   },
   "jest": {
     "preset": "react-native"
