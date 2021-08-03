@@ -62,7 +62,7 @@
     "eslint-plugin-prettier": "3.3.1",
     "husky": "4.3.8",
     "jest": "26.6.3",
-    "pod-install": "^0.1.0",
+    "pod-install": "0.1.18",
     "prettier": "2.2.1",
     "react": "16.14.0",
     "react-native": "0.64.2",
