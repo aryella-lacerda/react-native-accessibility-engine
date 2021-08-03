@@ -7,7 +7,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "clean": "react-native-clean-project"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -30,6 +31,7 @@
     "babel-plugin-module-resolver": "4.1.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.59.0",
+    "react-native-clean-project": "^3.6.4",
     "react-test-renderer": "^17.0.1",
     "yarn": "1.22.10"
   },
