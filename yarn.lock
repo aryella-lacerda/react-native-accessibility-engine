@@ -1347,7 +1347,7 @@
     resolve-from "5.0.0"
     resolve-global "1.0.0"
 
-"@commitlint/config-conventional@^8.3.4":
+"@commitlint/config-conventional@8.3.4":
   version "8.3.4"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-8.3.4.tgz#fed13b3711690663b176c1f6b39c205a565618d2"
   integrity sha512-w0Yc5+aVAjZgjYqx29igBOnVCj8O22gy3Vo6Fyp7PwoS7+AYS1x3sN7IBq6i7Ae15Mv5P+rEx1pkxXo5zOMe4g==
@@ -3391,7 +3391,7 @@ commander@~2.13.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
   integrity sha512-MVuS359B+YzaWqjCL/c+22gfryv+mCBPHAv3zyVI2GN8EY6IRP8VwtasXn8jyyhvvq84R4ImN1OKRtcbIasjYA==
 
-commitlint@^8.3.5:
+commitlint@8.3.5:
   version "8.3.5"
   resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-8.3.5.tgz#a8fd4aeadf1bac76976bac14127cbfbd666e0aa6"
   integrity sha512-vsJr4azgWgwQcBtQOJEMUH5m7yzhD6p09dss7XNs4a88ksBtWAHKXoCKaBCt9ISS1yWcxFRUwnNy7zZhjmnXdg==
