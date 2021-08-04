@@ -33,7 +33,7 @@
     "metro-react-native-babel-preset": "0.64.0",
     "react-native-clean-project": "3.6.4",
     "react-test-renderer": "17.0.2",
-    "yarn": "1.22.10"
+    "yarn": "1.22.11"
   },
   "jest": {
     "preset": "react-native"
