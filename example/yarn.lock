@@ -1131,7 +1131,7 @@
     query-string "^6.13.6"
     react-is "^16.13.0"
 
-"@react-navigation/native@^5.9.3":
+"@react-navigation/native@5.9.6":
   version "5.9.6"
   resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.9.6.tgz#3ad9bcdeb62008f0ae9bdfbb8c0df183fe57cc24"
   integrity sha512-m2F2AWBr0qbi4a5MBk2puGNWyVQnfmVHcpuIzQ37juptX6QCCuXjmOxvtdyqRzh2gKGnUlIeNaQKcACYj4zG/w==
@@ -1147,7 +1147,7 @@
   dependencies:
     nanoid "^3.1.15"
 
-"@react-navigation/stack@^5.14.3":
+"@react-navigation/stack@5.14.7":
   version "5.14.7"
   resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.7.tgz#8ac38d10fb2546613012b88cc065952f1e4506dc"
   integrity sha512-Ew+MYaJGvJUpZ3XYIilSCRruldr3JXNOWYM8bqE21EeJ5d3mfynpTPihck5ol0AN8uFEAeskQzoixGWh5eMYuA==
