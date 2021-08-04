@@ -7938,10 +7938,10 @@ plist@^3.0.1:
     xmlbuilder "^9.0.7"
     xmldom "0.1.x"
 
-pod-install@0.1.18:
-  version "0.1.18"
-  resolved "https://registry.yarnpkg.com/pod-install/-/pod-install-0.1.18.tgz#849ca44fd0be6d26da00b0664c6986eaaa08f7da"
-  integrity sha512-67du/MXloYatvOCgiV4RZXmg1nW887TdrwVTfZPVWMhmzRefzo3Mkw8lNYmbqN8WUlXtstaKn0l5DFDPfsDMLw==
+pod-install@0.1.25:
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/pod-install/-/pod-install-0.1.25.tgz#fb888e082ce43df236f07473618e49a7805dfe08"
+  integrity sha512-/cOrj3h0XCXTkWlE+FcRM3Mz+71aqw0g4ycEKBUWDNgwkFalQ9DCg1koz3n4700OWzc4MmSPkU640tbN+zyeqQ==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
