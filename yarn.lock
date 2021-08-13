@@ -2350,10 +2350,10 @@
   resolved "https://registry.yarnpkg.com/@react-native/polyfills/-/polyfills-1.0.0.tgz#05bb0031533598f9458cf65a502b8df0eecae780"
   integrity sha512-0jbp4RxjYopTsIdLl+/Fy2TiwVYHy4mgeu07DG4b/LyM0OS/+lPP5c9sbnt/AMlnF6qz2JRZpPpGw1eMNS6A4w==
 
-"@release-it/conventional-changelog@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@release-it/conventional-changelog/-/conventional-changelog-3.1.0.tgz#ec4b740f0789ce3bf12ef600c42e787c4e5f6b1c"
-  integrity sha512-dlqIs0Mgd5hubCkwHB6l1MN/BwdBFtlAL0C9vrnq5nuG/WREvFIz5W8kSEr+FCWARPFHlK3+J6Z3+FmxH12k5Q==
+"@release-it/conventional-changelog@3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@release-it/conventional-changelog/-/conventional-changelog-3.1.1.tgz#933a0282252201a3c4dd9548f6f11114b437cd41"
+  integrity sha512-SUebUHuLPOKzea1eItQZmZsROwqMZlBOXX2Nj/SYLb8JLX9HzHpDbJljYIaO3kQ8pja4wAJPbQWe+QlFpauLVg==
   dependencies:
     concat-stream "^2.0.0"
     conventional-changelog "^3.1.24"
