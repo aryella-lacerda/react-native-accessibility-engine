@@ -20,7 +20,7 @@ it("throws if 'accessibilityRole' prop not defined", () => {
   expect(() => run(<Button />)).toThrowError(rule.help.problem);
 });
 
-it("throws if 'accessibilityRole' prop has a value other than 'button' or 'link'", () => {
+it("throws if 'accessibilityRole' prop has a value other than 'button' or 'link' or 'imagebutton'", () => {
   const Button = () => (
     <TouchableOpacity accessibilityRole={'text'}>
       <Image source={TestAssets.heart['32px']} />
@@ -44,6 +44,16 @@ it("doesn't throw if 'accessibilityRole' prop has the value 'link'", () => {
   const Button = () => (
     <TouchableOpacity accessibilityRole={'link'}>
       <Text>This is a link.</Text>
+    </TouchableOpacity>
+  );
+
+  expect(() => run(<Button />)).not.toThrowError(rule.help.problem);
+});
+
+it("doesn't throw if 'accessibilityRole' prop has the value 'imagebutton'", () => {
+  const Button = () => (
+    <TouchableOpacity accessibilityRole={'imagebutton'}>
+      <Image source={TestAssets.heart['32px']} />
     </TouchableOpacity>
   );
 
