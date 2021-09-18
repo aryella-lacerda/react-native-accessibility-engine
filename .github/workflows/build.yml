@@ -1,12 +1,9 @@
 on:
-  workflow_dispatch:
   pull_request:
     branches: [main]
 
 jobs:
   ios:
-    # Run only if pull request merged or release was manually triggered
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: macos-latest
 
     env:
@@ -43,8 +40,6 @@ jobs:
 
 
   android:
-    # Run only if pull request merged or release was manually triggered
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     env:
