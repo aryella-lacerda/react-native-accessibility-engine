@@ -22,9 +22,9 @@
     "react-native-screens": "3.7.2"
   },
   "devDependencies": {
-    "@babel/core": "7.13.10",
-    "@babel/preset-typescript": "7.13.0",
-    "@babel/runtime": "7.13.10",
+    "@babel/core": "7.15.5",
+    "@babel/preset-typescript": "7.15.0",
+    "@babel/runtime": "7.15.4",
     "@types/jest": "26.0.24",
     "@types/react-test-renderer": "17.0.1",
     "add": "2.0.6",
