@@ -1,0 +1,63 @@
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  ios:
+    runs-on: macos-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install app dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: ./example
+
+      - name: Install lib dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false # Better for building libraries
+
+      - name: Cache pods
+        uses: actions/cache@v2
+        id: pod-cache
+        with:
+          path: example/ios/Pods
+          key: pods-${{ hashFiles('**/Podfile.lock') }}
+
+      - name: Install pods
+        if: steps.pod-cache.outputs.cache-hit != 'true'
+        run: pod install
+        working-directory: ./example/ios
+
+      - name: Build app for release
+        run: xcodebuild -workspace example/ios/AccessibilityEngineExample.xcworkspace -scheme AccessibilityEngineExample -configuration Release -sdk iphonesimulator -derivedDataPath example/ios/build
+
+
+  android:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install app dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: ./example
+
+      - name: Install lib dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false # Better for building libraries
+
+      - name: Build app for release
+        run: cd example/android && ./gradlew assembleRelease && cd ../..
