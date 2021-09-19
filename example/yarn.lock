@@ -5059,10 +5059,10 @@ react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-clean-project@3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/react-native-clean-project/-/react-native-clean-project-3.6.4.tgz#7589fffe82a184f1bcc0554d6a95c7bac4b1e9ef"
-  integrity sha512-bQij/EktcOb9VnEUg+UaC4bePWlGeqsLk0dyCJyQmHc4s1Cw7lo+cnnFVbuyFnjT0sEMSkDvDF0/rLD6437XMw==
+react-native-clean-project@3.6.7:
+  version "3.6.7"
+  resolved "https://registry.yarnpkg.com/react-native-clean-project/-/react-native-clean-project-3.6.7.tgz#6d22ad22fe3a1e6efdb040eb66f9bdfb2273ac2e"
+  integrity sha512-GSJG1oNRJKtINPMzfHgRmu7HJs7phwgtwQ6GvyGARiySqQlU/bAc5zsI9rOeNPGlpgYongQtjOGdmqSpsWMJTw==
 
 react-native-codegen@^0.0.6:
   version "0.0.6"
