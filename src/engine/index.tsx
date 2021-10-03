@@ -1,10 +1,10 @@
 import type React from 'react';
-import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 import groupBy from 'lodash.groupby';
 
 import rules from '../rules';
 import type { Violation } from '../types';
-import { getComponentName, isHidden } from '../helpers';
+import { isHidden, getPathToComponent } from '../helpers';
 
 class AccessibilityError extends Error {
   constructor(message = '') {
@@ -71,18 +71,6 @@ const generateError = (violations: Violation[]): string => {
   }
 
   return errorString;
-};
-
-const getPathToComponent = (node: ReactTestInstance) => {
-  const path = [];
-  let current: ReactTestInstance | null = node;
-
-  while (current) {
-    path.push(getComponentName(current));
-    current = current?.parent;
-  }
-
-  return path.reverse();
 };
 
 export default engine;
