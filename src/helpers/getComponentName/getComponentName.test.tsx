@@ -92,9 +92,9 @@ describe('should recognize built-in components', () => {
     expect(getComponentName(pressableNode)).toBe('Pressable');
   });
 
-  it("should return 'Switch' for <Switch />", () => {
+  it("should return 'RCTSwitch' for <Switch />", () => {
     const switchNode = tree.root.findByProps({ testID: 'switch' });
-    expect(getComponentName(switchNode)).toBe('Switch');
+    expect(getComponentName(switchNode)).toBe('RCTSwitch');
   });
 
   it("should return 'Modal' for <Modal />", () => {
