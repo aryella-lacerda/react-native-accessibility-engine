@@ -23,15 +23,7 @@ jobs:
         with:
           useLockFile: false # Better for building libraries
 
-      - name: Cache pods
-        uses: actions/cache@v2
-        id: pod-cache
-        with:
-          path: example/ios/Pods
-          key: pods-${{ hashFiles('**/Podfile.lock') }}
-
       - name: Install pods
-        if: steps.pod-cache.outputs.cache-hit != 'true'
         run: pod install
         working-directory: ./example/ios
 

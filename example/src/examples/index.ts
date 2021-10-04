@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import ButtonLabelTest from './button-label-test';
 import ButtonAccessibleTest from './button-accessible-test';
 import ButtonRoleTest from './button-role-test';
@@ -17,7 +19,7 @@ export type ScreensParamList = {
 
 interface ScreenProps {
   name: keyof ScreensParamList;
-  component: React.ReactNode;
+  component: ReactNode;
   key: string;
   options: {
     title: string;
