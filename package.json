@@ -25,7 +25,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
+    "prepare": "husky install",
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
@@ -60,7 +60,7 @@
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
-    "husky": "4.3.8",
+    "husky": "7.0.2",
     "jest": "26.6.3",
     "pod-install": "0.1.28",
     "prettier": "2.4.1",
@@ -88,12 +88,6 @@
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.ts"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn test && yarn typescript"
-    }
   },
   "commitlint": {
     "extends": [
