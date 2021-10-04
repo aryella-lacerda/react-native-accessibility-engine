@@ -128,19 +128,33 @@ describe('should recognize built-in components', () => {
   });
 });
 
-describe('should recognize custom components', () => {
-  it("should return 'Custom' for <Custom />", () => {
-    const Custom = (props: PropsWithChildren<ViewProps>) => <View {...props} />;
+it("should return 'Custom' for <Custom />", () => {
+  const Custom = (props: PropsWithChildren<ViewProps>) => <View {...props} />;
 
-    let tree = TestRenderer.create(
-      <View testID={'view'}>
-        <Custom testID={'custom'}>
-          <Text testID={'text'}>A</Text>
-        </Custom>
-      </View>
-    );
+  let tree = TestRenderer.create(
+    <View testID={'view'}>
+      <Custom testID={'custom'}>
+        <Text testID={'text'}>A</Text>
+      </Custom>
+    </View>
+  );
 
-    const customNode = tree.root.findByProps({ testID: 'custom' });
-    expect(getComponentName(customNode)).toBe('Custom');
-  });
+  const customNode = tree.root.findByProps({ testID: 'custom' });
+  expect(getComponentName(customNode)).toBe('Custom');
+});
+
+it("should return 'Unknown' for components without defined names", () => {
+  let tree = TestRenderer.create(<View testID={'view'} />);
+
+  const viewNode = tree.root.findByProps({ testID: 'view' });
+
+  // Contrived example where a component doesn't have a name or displayName
+  // Occurs in some internal components.
+
+  // @ts-expect-error
+  viewNode.type.name = null;
+  // @ts-expect-error
+  viewNode.type.displayName = null;
+
+  expect(getComponentName(viewNode)).toBe('Unknown');
 });
