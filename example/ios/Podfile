@@ -21,6 +21,7 @@ target 'AccessibilityEngineExample' do
 
     flipper_post_install(installer)
     react_native_post_install(installer)
+    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
 
     # Yoga Fix - https://github.com/facebook/react-native/issues/29605#issuecomment-861783673 
     # SKIP STEP 4
