@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
+  Pressable,
 } from 'react-native';
 
 const isButton = (type: React.ElementType<any>) => {
@@ -11,7 +12,8 @@ const isButton = (type: React.ElementType<any>) => {
     type === TouchableHighlight ||
     type === TouchableOpacity ||
     type === TouchableNativeFeedback ||
-    type === TouchableWithoutFeedback
+    type === TouchableWithoutFeedback ||
+    type === Pressable
   );
 };
 
