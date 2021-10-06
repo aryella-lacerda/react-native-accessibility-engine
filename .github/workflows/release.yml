@@ -15,8 +15,8 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Print GitHub event for debugging purposes
-        run: echo "${{ toJson(github) }}"
+      # - name: Print GitHub event for debugging purposes
+      #   run: echo "${{ toJson(github) }}"
       
       - name: Install SSH Client
         uses: webfactory/ssh-agent@v0.5.3
