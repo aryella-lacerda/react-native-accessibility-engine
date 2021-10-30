@@ -33,6 +33,11 @@
   },
   "keywords": [
     "react-native",
+    "jest",
+    "testing",
+    "testing-library",
+    "a11y",
+    "accessibility",
     "ios",
     "android"
   ],
@@ -117,6 +122,9 @@
       "@react-native-community",
       "prettier"
     ],
+    "globals": {
+      "expect": true
+    },
     "rules": {
       "prettier/prettier": [
         "error",
