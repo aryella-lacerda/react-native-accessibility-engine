@@ -4,7 +4,7 @@
 
 <h1 align="center">
 React Native Accessibility Engine
-</h1> 
+</h1>
 
 <h3 align="center">
 Make accessibility-related assertions in React Native
@@ -13,9 +13,9 @@ Make accessibility-related assertions in React Native
 <div align="center">
   <img alt="npm" src="https://img.shields.io/npm/v/react-native-accessibility-engine">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
-  <img src="https://img.shields.io/badge/contributors-welcome-blue" />  
-  <img src="https://img.shields.io/badge/maintenance-active-green" /> 
-  <img src="https://img.shields.io/badge/support-ios|android-purple" />  
+  <img src="https://img.shields.io/badge/contributors-welcome-blue" />
+  <img src="https://img.shields.io/badge/maintenance-active-green" />
+  <img src="https://img.shields.io/badge/support-ios|android-purple" />
   <a href="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine">
     <img src="https://codecov.io/gh/aryella-lacerda/react-native-accessibility-engine/branch/main/graph/badge.svg?token=GQNZ4HXN7Q"/>
   </a>
@@ -60,6 +60,8 @@ yarn add react-native-accessibility-engine --dev
 
 ## Usage
 
+### With React elements
+
 ```tsx
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
@@ -73,20 +75,47 @@ const Button = () => (
 );
 
 it('should not have accessibility errors', () => {
-  expect(() => AccessibilityEngine.check(<Button />)).not.toThrow();
+  const element = <Button />;
+  expect(() => AccessibilityEngine.check(element)).not.toThrow();
+});
+
+```
+
+### With React test instances
+
+You can also pass test instances from `react-test-renderer` and
+`@testing-library/react-native`:
+
+```tsx
+import React from 'react';
+import { Image, TouchableOpacity } from 'react-native';
+import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
+import Icons from './assets';
+import AccessibilityEngine from 'react-native-accessibility-engine';
+
+const Button = () => (
+  <TouchableOpacity accessible={false}>
+    <Image source={Icons.filledHeart['32px']} />
+  </TouchableOpacity>
+);
+
+it('should not have accessibility errors', () => {
+  const testInstance = ReactTestInstance.create(<Button />).root;
+  // ...
+  expect(() => AccessibilityEngine.check(testInstance)).not.toThrow();
 });
 
 ```
 
 ## Limitations
 
-Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. You can check out [the current list of rules and their descriptions here](./docs/rules-catalog.md). 
+Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. You can check out [the current list of rules and their descriptions here](./docs/rules-catalog.md).
 
 ## Contributing
 
 <div>
-<img src="https://img.shields.io/badge/contributors-welcome-blue" />  
-<img src="https://img.shields.io/badge/maintenance-active-green" />  
+<img src="https://img.shields.io/badge/contributors-welcome-blue" />
+<img src="https://img.shields.io/badge/maintenance-active-green" />
 </div>
 
 This project is totally open to questions, sugestions, corrections, and community pull requests. We've tried to make contributing as painless a process as possible. Take a look at our guides:
