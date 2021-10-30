@@ -1,10 +1,11 @@
 import type React from 'react';
-import TestRenderer from 'react-test-renderer';
+import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
+
 import groupBy from 'lodash.groupby';
 
 import rules from '../rules';
 import type { Violation } from '../types';
-import { isHidden, getPathToComponent } from '../helpers';
+import { isHidden, isReactTestInstance, getPathToComponent } from '../helpers';
 
 class AccessibilityError extends Error {
   constructor(message = '') {
@@ -13,12 +14,22 @@ class AccessibilityError extends Error {
   }
 }
 
-const engine = (tree: React.ReactElement<any>, _rules = rules) => {
-  let renderedTree = TestRenderer.create(tree);
+const engine = (
+  treeOrTestInstance: React.ReactElement<any> | ReactTestInstance,
+  _rules = rules
+) => {
+  let testInstance = isReactTestInstance(treeOrTestInstance)
+    ? treeOrTestInstance
+    : TestRenderer.create(treeOrTestInstance).root;
   const violations: Violation[] = [];
 
   for (const rule of _rules) {
-    const matchedComponents = renderedTree.root.findAll(rule.matcher);
+    const matchedComponents = testInstance.findAll(rule.matcher, {
+      deep: true,
+    });
+    if (rule.matcher(testInstance)) {
+      matchedComponents.push(testInstance);
+    }
     for (const component of matchedComponents) {
       let didPassAssertion = false;
 

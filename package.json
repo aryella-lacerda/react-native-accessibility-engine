@@ -50,6 +50,7 @@
     "@react-native-community/slider": "4.1.7",
     "@release-it/conventional-changelog": "3.3.0",
     "@testing-library/jest-native": "4.0.2",
+    "@testing-library/react-native": "^8.0.0",
     "@types/jest": "26.0.24",
     "@types/lodash.groupby": "4.6.6",
     "@types/react": "17.0.27",
