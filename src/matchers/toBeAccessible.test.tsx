@@ -25,3 +25,11 @@ it('should contain accessibility errors', () => {
 it('should not contain accessibility errors', () => {
   expect(<Button />).toBeAccessible();
 });
+
+it('should report error if component is not accessible', () => {
+  expect(() => expect(<NonAccessibleButton />).toBeAccessible()).toThrow();
+});
+
+it('should not report error if component is accessible', () => {
+  expect(() => expect(<Button />).not.toBeAccessible()).toThrow();
+});
