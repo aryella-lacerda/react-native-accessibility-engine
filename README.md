@@ -66,7 +66,6 @@ yarn add react-native-accessibility-engine --dev
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import Icons from './assets';
-import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const Button = () => (
   <TouchableOpacity accessible={false}>
@@ -75,10 +74,8 @@ const Button = () => (
 );
 
 it('should not have accessibility errors', () => {
-  const element = <Button />;
-  expect(() => AccessibilityEngine.check(element)).not.toThrow();
+  expect(<Button />)).toBeAccessible();
 });
-
 ```
 
 ### With React test instances
@@ -91,7 +88,6 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
 import Icons from './assets';
-import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const Button = () => (
   <TouchableOpacity accessible={false}>
@@ -102,9 +98,8 @@ const Button = () => (
 it('should not have accessibility errors', () => {
   const testInstance = ReactTestInstance.create(<Button />).root;
   // ...
-  expect(() => AccessibilityEngine.check(testInstance)).not.toThrow();
+  expect(testInstance).toBeAccessible();
 });
-
 ```
 
 ## Limitations
