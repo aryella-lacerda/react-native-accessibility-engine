@@ -31,7 +31,7 @@ If it's sometimes dificult even for people with good vision to figure out that c
 ### Can be implemented by:
 - setting the button's `accessibilityRole` prop to `button`.
 - setting the button's `accessibilityRole` prop to `imagebutton` in the event that your button is also an image.
-
+- setting the button's `accessibilityRole` prop to `radio` in the event that your button is part of a `radiogroup` and behaves like a `radio` button: "A checkable input in a group of elements with the same role, only one of which can be checked at a time.".
 ### Example:
 
 ```tsx
