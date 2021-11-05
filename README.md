@@ -58,6 +58,15 @@ npm install react-native-accessibility-engine --save-dev
 yarn add react-native-accessibility-engine --dev
 ```
 
+Add the custom `toBeAccessible` matcher to your jest configs `setupFilesAfterEnv` array:
+
+```sh
+{
+  ...
+  "setupFilesAfterEnv": [..., "react-native-accessibility-engine/src/extend-expect.ts"],
+}
+```
+
 ## Usage
 
 ### With React elements
