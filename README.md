@@ -58,6 +58,15 @@ npm install react-native-accessibility-engine --save-dev
 yarn add react-native-accessibility-engine --dev
 ```
 
+Add the custom `toBeAccessible` matcher to your jest configs `setupFilesAfterEnv` array:
+
+```sh
+{
+  ...
+  "setupFilesAfterEnv": [..., "react-native-accessibility-engine/src/extend-expect.ts"],
+}
+```
+
 ## Usage
 
 ### With React elements
@@ -66,7 +75,6 @@ yarn add react-native-accessibility-engine --dev
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import Icons from './assets';
-import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const Button = () => (
   <TouchableOpacity accessible={false}>
@@ -75,10 +83,8 @@ const Button = () => (
 );
 
 it('should not have accessibility errors', () => {
-  const element = <Button />;
-  expect(() => AccessibilityEngine.check(element)).not.toThrow();
+  expect(<Button />)).toBeAccessible();
 });
-
 ```
 
 ### With React test instances
@@ -91,7 +97,6 @@ import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
 import Icons from './assets';
-import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const Button = () => (
   <TouchableOpacity accessible={false}>
@@ -102,9 +107,8 @@ const Button = () => (
 it('should not have accessibility errors', () => {
   const testInstance = ReactTestInstance.create(<Button />).root;
   // ...
-  expect(() => AccessibilityEngine.check(testInstance)).not.toThrow();
+  expect(testInstance).toBeAccessible();
 });
-
 ```
 
 ## Limitations
