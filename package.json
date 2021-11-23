@@ -1,6 +1,6 @@
 {
   "name": "react-native-accessibility-engine",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Make accessibility-related assertions on React Native code using React Test Renderer",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
