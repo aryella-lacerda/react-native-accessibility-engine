@@ -15,13 +15,17 @@ target 'AccessibilityEngineExample' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!({ 'Flipper' => '0.92.0', 'Flipper-Folly' => '2.6.7', 'Flipper-RSocket' => '~> 1.4', "Flipper-DoubleConversion" => "1.1.7" })
+  if !ENV['CI']
+    use_flipper!({ 'Flipper' => '0.95.0', 'Flipper-Folly' => '2.6.7', 'Flipper-RSocket' => '~> 1.4', "Flipper-DoubleConversion" => "1.1.7" })
+  end
 
   post_install do |installer|
 
-    flipper_post_install(installer)
+    if !ENV['CI']
+      flipper_post_install(installer)
+    end
+    
     react_native_post_install(installer)
-    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
 
     # Yoga Fix - https://github.com/facebook/react-native/issues/29605#issuecomment-861783673 
     # SKIP STEP 4
@@ -38,6 +42,5 @@ target 'AccessibilityEngineExample' do
       end
       aggregate_target.user_project.save
     end
-    
   end
 end
