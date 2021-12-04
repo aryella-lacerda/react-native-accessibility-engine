@@ -33,7 +33,6 @@ jobs:
 
       - name: Lint code
         run: yarn lint
-      
+
       - name: Typecheck code
         run: yarn typescript
-
