@@ -160,7 +160,7 @@
     ]
   },
   "dependencies": {
-    "lodash.groupby": "^4.6.0",
-    "react-test-renderer": "^17.0.1"
+    "lodash.groupby": "4.6.0",
+    "react-test-renderer": "17.0.1"
   }
 }
