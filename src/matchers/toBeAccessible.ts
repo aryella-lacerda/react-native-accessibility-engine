@@ -1,17 +1,6 @@
 import type { ReactElement } from 'react';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 
-declare global {
-  namespace jest {
-    interface Matchers<R> {
-      /**
-       * Checks whether a component conforms to Accessibility A11y best practices.
-       */
-      toBeAccessible(): R;
-    }
-  }
-}
-
 export default function toBeAccessible(received: ReactElement) {
   try {
     AccessibilityEngine.check(received);
