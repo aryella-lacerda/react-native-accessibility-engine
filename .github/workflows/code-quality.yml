@@ -31,9 +31,6 @@ jobs:
       - name: Lint commit message
         uses: wagoid/commitlint-github-action@v4
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
       - name: Lint code
         run: yarn lint
 
