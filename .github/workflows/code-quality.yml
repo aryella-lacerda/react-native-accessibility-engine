@@ -31,8 +31,8 @@ jobs:
       - name: Lint commit message
         uses: wagoid/commitlint-github-action@v4
 
-      - name: Lint code
-        run: yarn lint
+      # - name: Lint code
+      #   run: yarn lint
 
       - name: Typecheck code
         run: yarn typescript

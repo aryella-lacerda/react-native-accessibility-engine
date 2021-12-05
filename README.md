@@ -30,13 +30,14 @@ Make accessibility-related assertions in React Native
 - [Goals](#goals)
 - [Roadmap](#roadmap)
 - [Installation](#installation)
+- [Configuration](#configuration)
 - [Limitations](#limitations)
 - [Contributing](#contributing)
 - [Related Projects](#related-projects)
 
 ## Intro
 
-The React Native ecosystem is *massive* but it's still lagging behind React Web when it comes to accessibility tools. As mobile developers, we're still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical tutorials on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about what makes an app accessible or what accessibility even *is*.
+The React Native ecosystem is _massive_ but it's still lagging behind React Web when it comes to accessibility tools. As mobile developers, we're still braving the challenge of mapping robust, time-tested web guidelines into equally robust guidelines for mobile. In React Native, we also face the challenge of adhering to the accessibility guidelines of multiple platforms using only [React Native's Accessibility API](https://reactnative.dev/docs/accessibility). There aren't many practical tutorials on the best use of this API, which means there are limited resources for React Native developers who want to make their apps more accessible. Indeed, there's still a lot of confusion about what makes an app accessible or what accessibility even _is_.
 
 This project aims to make solving these problems a little easier.
 
@@ -54,17 +55,33 @@ This project aims to make solving these problems a little easier.
 
 ```sh
 npm install react-native-accessibility-engine --save-dev
-// or
+# or
 yarn add react-native-accessibility-engine --dev
 ```
 
-Add the custom `toBeAccessible` matcher to your jest configs `setupFilesAfterEnv` array:
+## Configuration
+
+Add the custom `toBeAccessible` matcher to your Jest config's `setupFilesAfterEnv` array:
 
 ```sh
 {
   ...
-  "setupFilesAfterEnv": [..., "react-native-accessibility-engine/src/extend-expect.ts"],
+  "setupFilesAfterEnv": [..., "react-native-accessibility-engine/lib/commonjs/extend-expect"],
 }
+```
+
+Alternately, if you have a Jest setup file, you could add the matcher there:
+
+```sh
+{
+  ...
+  "setupFilesAfterEnv": ["path/to/your/setup/file"],
+}
+```
+
+```typescript
+// At the top of your setup file
+import 'react-native-accessibility-engine/lib/commonjs/extend-expect';
 ```
 
 ## Usage
@@ -82,7 +99,7 @@ const Button = () => (
   </TouchableOpacity>
 );
 
-it('should not have accessibility errors', () => {
+it('should be accessible', () => {
   expect(<Button />)).toBeAccessible();
 });
 ```
@@ -95,19 +112,27 @@ You can also pass test instances from `react-test-renderer` and
 ```tsx
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
+
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
+import { render } from '@testing-library/react-native';
+
 import Icons from './assets';
 
 const Button = () => (
-  <TouchableOpacity accessible={false}>
+  <TouchableOpacity accessible={false} accessibilityRole={'button'}>
     <Image source={Icons.filledHeart['32px']} />
   </TouchableOpacity>
 );
 
-it('should not have accessibility errors', () => {
-  const testInstance = ReactTestInstance.create(<Button />).root;
-  // ...
-  expect(testInstance).toBeAccessible();
+it('should be accessible, using react-test-renderer', () => {
+  const button = TestRenderer.create(<Button />).root;
+  expect(button).toBeAccessible();
+});
+
+it('should be accessible, using @testing-library/react-native', () => {
+  const { getByA11yRole } = render(<Test />);
+  const button = getByA11yRole('button');
+  expect(button).toBeAccessible();
 });
 ```
 
