@@ -1,0 +1,50 @@
+workspace "AccessibilityEngineExample" do
+  configuration "release" do
+    build_configuration "Release"
+  end
+
+  derived_data_path "build"
+
+  target "AccessibilityEngineExample" do
+
+    cache "libCocoaAsyncSocket.a"
+    cache "libDoubleConversion.a"
+    cache "libFBReactNativeSpec.a"
+
+    # Connected to libFBReactNativeSpec
+    # cache "libYoga.a"
+    # cache "libYogaKit.a"
+
+    cache "libFlipperKit.a"
+    cache "libFlipper.a"
+
+    # Connected to libFlipper
+    # cache "libFlipper-Boost-iOSX.a"
+    # cache "libFlipper-DoubleConversion.a"
+    # cache "libFlipper-Fmt.a"
+    # cache "libFlipper-Folly.a"
+    # cache "libFlipper-Glog.a"
+    # cache "libFlipper-PeerTalk.a"
+
+    cache "libReact-CoreModules.a"
+
+    # Connected to libReact-CoreModules
+    # cache "libReact-RCTAnimation.a"
+    # cache "libReact-RCTBlob.a"
+    # cache "libReact-RCTImage.a"
+    # cache "libReact-RCTLinking.a"
+    # cache "libReact-RCTNetwork.a"
+    # cache "libReact-RCTSettings.a"
+    # cache "libReact-RCTText.a"
+
+    # ??
+    cache "libReact-RCTVibration.a"
+
+    # Third-party libs
+    cache "libreact-native-safe-area-context.a"
+    cache "libRNCMaskedView.a"
+    cache "libRNGestureHandler.a"
+    cache "libRNReanimated.a"
+    cache "libRNScreens.a"
+  end
+end
