@@ -23,13 +23,12 @@ jobs:
         with:
           useLockFile: false # Better for building libraries
 
-      - name: Install pods
-        run: pod install
-        working-directory: ./example/ios
+      # - name: Install pods
+      #   run: pod install
+      #   working-directory: ./example/ios
 
       - name: Build app for release
         run: xcodebuild -workspace example/ios/AccessibilityEngineExample.xcworkspace -scheme AccessibilityEngineExample -configuration Release -sdk iphonesimulator -derivedDataPath example/ios/build
-
 
   android:
     runs-on: ubuntu-latest
