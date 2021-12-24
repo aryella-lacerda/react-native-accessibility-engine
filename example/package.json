@@ -29,7 +29,7 @@
     "@types/react-test-renderer": "17.0.1",
     "add": "2.0.6",
     "babel-plugin-module-resolver": "4.1.0",
-    "jest": "27.4.3",
+    "jest": "27.4.5",
     "metro-react-native-babel-preset": "0.66.2",
     "react-native-clean-project": "3.6.7",
     "react-test-renderer": "17.0.2"
