@@ -6,7 +6,7 @@ import AccessibilityEngine from 'react-native-accessibility-engine';
 import TestAssets from 'tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return AccessibilityEngine.check(component, [rule]);
+  return AccessibilityEngine.check(component, { rules: [rule] });
 };
 
 describe('buttons', () => {

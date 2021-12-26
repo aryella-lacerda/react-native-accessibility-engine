@@ -1,11 +1,10 @@
 import type React from 'react';
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
 
-import groupBy from 'lodash.groupby';
-
-import rules from '../rules';
-import type { Violation } from '../types';
+import allRules from '../rules';
+import type { Rule, Violation } from '../types';
 import { isHidden, isReactTestInstance, getPathToComponent } from '../helpers';
+import { generateCheckError } from '../utils';
 
 class AccessibilityError extends Error {
   constructor(message = '') {
@@ -14,33 +13,49 @@ class AccessibilityError extends Error {
   }
 }
 
+type Options = {
+  // Pass in the subset of rules you want to run
+  rules?: Rule[];
+  // Return the violation array instead of an error
+  returnViolations?: boolean;
+};
+
 const engine = (
   treeOrTestInstance: React.ReactElement<any> | ReactTestInstance,
-  _rules = rules
+  options?: Options
 ) => {
   let testInstance = isReactTestInstance(treeOrTestInstance)
     ? treeOrTestInstance
     : TestRenderer.create(treeOrTestInstance).root;
+
+  const _rules = options?.rules || allRules;
   const violations: Violation[] = [];
 
+  // For every rule
   for (const rule of _rules) {
+    // Traverse the component tree below the root to find the components that should be tested
     const matchedComponents = testInstance.findAll(rule.matcher, {
       deep: true,
     });
+
+    // Check if the root of the tree should be tested as well
     if (rule.matcher(testInstance)) {
       matchedComponents.push(testInstance);
     }
+
+    // For all the components that were found
     for (const component of matchedComponents) {
       let didPassAssertion = false;
 
-      // Skip checks on hidden components
       if (isHidden(component)) {
+        // Skip checks on hidden components
         didPassAssertion = true;
       } else {
+        // Check if the component meets the rule's assertion
         didPassAssertion = rule.assertion(component);
       }
 
-      // console.log(component);
+      // If not, add component to violation array
       if (!didPassAssertion) {
         violations.push({
           pathToComponent: getPathToComponent(component),
@@ -50,38 +65,15 @@ const engine = (
     }
   }
 
+  if (options?.returnViolations) {
+    return violations;
+  }
+
   if (violations.length) {
-    throw new AccessibilityError(generateError(violations));
+    throw new AccessibilityError(generateCheckError(violations));
   }
 
-  return violations;
-};
-
-const generateError = (violations: Violation[]): string => {
-  let errorString = '\n';
-
-  // Each unique path represents a component in the component tree
-  const violationsGroupedByPath = groupBy(violations, (violation) => {
-    return violation.pathToComponent;
-  });
-
-  for (const path in violationsGroupedByPath) {
-    // Prettify path to component
-    let pathString = '';
-    for (const element of path.split(',')) {
-      pathString += `${element} > `;
-    }
-
-    // Slice off last ' > ' characters which are unnecessary
-    pathString = pathString.substring(0, pathString.length - 3);
-    errorString += `${pathString}\n`;
-
-    for (const violation of violationsGroupedByPath[path]) {
-      errorString += ` · ${violation.problem}\n   ↳  ${violation.solution}\n`;
-    }
-  }
-
-  return errorString;
+  return [];
 };
 
 export default engine;

@@ -7,7 +7,7 @@ import {
   Pressable,
 } from 'react-native';
 
-const isButton = (type: React.ElementType<any>) => {
+const isPressable = (type: React.ElementType<any>) => {
   return (
     type === TouchableHighlight ||
     type === TouchableOpacity ||
@@ -17,4 +17,4 @@ const isButton = (type: React.ElementType<any>) => {
   );
 };
 
-export default isButton;
+export default isPressable;

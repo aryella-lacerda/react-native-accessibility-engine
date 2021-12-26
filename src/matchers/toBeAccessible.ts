@@ -1,17 +1,21 @@
 import type { ReactElement } from 'react';
-import AccessibilityEngine from 'react-native-accessibility-engine';
+import Engine from 'react-native-accessibility-engine';
+import { generateMatcherError } from '../utils';
 
 export default function toBeAccessible(received: ReactElement) {
-  try {
-    AccessibilityEngine.check(received);
-  } catch (error: any) {
+  const violations = Engine.check(received, {
+    returnViolations: true,
+  });
+
+  if (violations.length) {
+    // @ts-ignore
+    const message = generateMatcherError(violations, this.isNot);
     return {
       pass: false,
-      message() {
-        return error.message;
-      },
+      message: () => message,
     };
   }
+
   return {
     pass: true,
     message() {

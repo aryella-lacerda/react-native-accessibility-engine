@@ -3,7 +3,7 @@ import React from 'react';
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
 import { Slider as DeprecatedRNSlider } from 'react-native';
 import CommunitySlider from '@react-native-community/slider';
-import isSlider from './isSlider';
+import isAdjustable from './isAdjustable';
 
 console.error = jest.fn();
 
@@ -22,7 +22,7 @@ test.each(cases)(`identifies %p`, (_, Component, numOfMatches) => {
     <Component maximumValue={10} minimumValue={1} />
   );
 
-  const matcher = (node: ReactTestInstance) => isSlider(node);
+  const matcher = (node: ReactTestInstance) => isAdjustable(node);
   const matched = renderedTree.root.findAll(matcher);
 
   expect(matched.length).toBe(numOfMatches);

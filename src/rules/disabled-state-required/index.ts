@@ -7,7 +7,7 @@ const rule: Rule = {
   assertion: (node) => node.props.accessibilityState?.disabled !== undefined,
   help: {
     problem:
-      'If a component has a disabled state, we should expose its enabled/disabled state to the user',
+      "This component has a disabled state but it isn't exposed to the user",
     solution:
       "Set the 'accessibilityState' prop to an object containing a boolean 'disabled' key",
     link: '',

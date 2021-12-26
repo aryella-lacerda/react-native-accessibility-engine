@@ -4,7 +4,7 @@ import rule from '.';
 import AccessibilityEngine from 'react-native-accessibility-engine';
 
 const run = (component: React.ReactElement<any>) => {
-  return AccessibilityEngine.check(component, [rule]);
+  return AccessibilityEngine.check(component, { rules: [rule] });
 };
 
 it("throws if 'accessibilityValue' prop not defined", () => {
