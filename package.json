@@ -59,7 +59,7 @@
     "@types/jest": "27.0.3",
     "@types/lodash.groupby": "4.6.6",
     "@types/react": "17.0.38",
-    "@types/react-native": "0.66.10",
+    "@types/react-native": "0.66.11",
     "@types/react-test-renderer": "17.0.1",
     "babel-jest": "27.4.5",
     "commitlint": "15.0.0",
