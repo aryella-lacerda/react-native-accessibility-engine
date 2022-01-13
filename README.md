@@ -27,23 +27,17 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-
   - [Goals](#goals)
   - [Roadmap](#roadmap)
-
 - [How to use](#howtouse)
-
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Usage](#usage)
-
 - [Rules](#rules)
-
   - [Current rules](#current-rules)
   - [What's a rule anyway?](#what's-a-rule-anyway?)
   - [Proposing a new rule](#proposing-a-new-rule)
   - [ReactTestInstance](#reacttestinstance)
-
 - [Limitations](#limitations)
 - [Contributing](#contributing)
 - [Related Projects](#related-projects)
