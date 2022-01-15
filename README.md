@@ -66,7 +66,7 @@ yarn add react-native-accessibility-engine --dev
 
 Add the custom `toBeAccessible` matcher to your Jest config's `setupFilesAfterEnv` array:
 
-```json
+```sh
 {
   ...
   "setupFilesAfterEnv": [..., "react-native-accessibility-engine/lib/commonjs/extend-expect"],
@@ -75,7 +75,7 @@ Add the custom `toBeAccessible` matcher to your Jest config's `setupFilesAfterEn
 
 Alternately, if you have a Jest setup file, you could add the matcher there:
 
-```json
+```sh
 {
   ...
   "setupFilesAfterEnv": ["path/to/your/setup/file"],
