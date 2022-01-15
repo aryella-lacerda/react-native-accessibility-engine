@@ -27,17 +27,15 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-- [How to use](#howtouse)
+- [How to use](#how-to-use)
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Usage](#usage)
-- [Rules](#rules)
-  - [Current rules catalog](#current-rules-catalog)
+- [Current rules](#current-rules)
+- [Contributing](#contributing)
   - [What's a rule anyway?](#what's-a-rule-anyway?)
   - [Proposing a new rule](#proposing-a-new-rule)
   - [ReactTestInstance](#reacttestinstance)
-- [Limitations](#limitations)
-- [Contributing](#contributing)
 - [Related Projects](#related-projects)
 
 # Intro
@@ -139,9 +137,7 @@ it('should be accessible, using @testing-library/react-native', () => {
 });
 ```
 
-# Rules
-
-## Current rules catalog
+# Current rules
 
 | ID                            | Description                                                                                                   |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -154,6 +150,15 @@ it('should be accessible, using @testing-library/react-native', () => {
 | adjustable-value-required     | If a component has a value that can be adjusted, we should inform the user of its min, max, and current value |
 | disabled-state-required       | If a component has a disabled state, we should expose its enabled/disabled state to the user                  |
 | no-empty-text                 | If a text node doesn't contain text, we should add text or prevent it from rendering when it has no content   |
+
+# Contributing
+
+<div>
+<img src="https://img.shields.io/badge/contributors-welcome-blue" />
+<img src="https://img.shields.io/badge/maintenance-active-green" />
+</div>
+
+RNAE is totally open to questions, sugestions, corrections, and community pull requests. Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. Feel free to suggest any rules you feel could be helpful. ✌️
 
 ## What's a rule anyway?
 
@@ -184,7 +189,7 @@ const rule: Rule = {
 
 ### ID
 
-First, we define an `id`, which doubles as the rule's name and should be as simple and self-explanatory as possible. It should also be unique, so take a look at the [rules catalog]('./rules-catalog.md') to make sure it isn't already in use.
+First, we define an `id`, which doubles as the rule's name and should be as simple and self-explanatory as possible. It should also be unique, so take a look at the [rules catalog](#current-rules) to make sure it isn't already in use.
 
 ### Matcher
 
@@ -236,8 +241,6 @@ yarn test
 yarn typescript
 ```
 
-Then just be patient while someone reviews your PR and gets back to you. Thanks again for your contribution!
-
 ## ReactTestInstance
 
 For reference, this the type of the `node` object passed to the `matcher` and `assertion` functions.
@@ -268,19 +271,6 @@ export interface ReactTestInstance {
   ): ReactTestInstance[];
 }
 ```
-
-# Limitations
-
-Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. Feel free to suggest any rules you feel could be helpful! ✌️
-
-# Contributing
-
-<div>
-<img src="https://img.shields.io/badge/contributors-welcome-blue" />
-<img src="https://img.shields.io/badge/maintenance-active-green" />
-</div>
-
-This project is totally open to questions, sugestions, corrections, and community pull requests.
 
 # Related projects
 
