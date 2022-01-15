@@ -1,5 +1,5 @@
-export { default as isButton } from './isButton';
-export { default as isSlider } from './isSlider';
+export { default as isPressable } from './isPressable';
+export { default as isAdjustable } from './isAdjustable';
 export { default as isText } from './isText';
 export { default as isHidden } from './isHidden';
 

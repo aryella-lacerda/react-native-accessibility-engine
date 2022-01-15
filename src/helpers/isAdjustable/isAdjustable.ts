@@ -1,6 +1,6 @@
 import type { ReactTestInstance } from 'react-test-renderer';
 
-const isSlider = (node: ReactTestInstance) => {
+const isAdjustable = (node: ReactTestInstance) => {
   const slidersInTree = node.findAll((_node: ReactTestInstance) =>
     _node.type.toString().includes('Slider')
   );
@@ -13,4 +13,4 @@ const isSlider = (node: ReactTestInstance) => {
   return node.type.toString().includes('Slider') && slidersInTree.length === 1;
 };
 
-export default isSlider;
+export default isAdjustable;

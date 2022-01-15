@@ -10,8 +10,9 @@ const Button = () => (
   </TouchableOpacity>
 );
 
-it('should not contain accessibility errors', () => {
-  expect(() => AccessibilityEngine.check(<Button />)).toThrow();
+it('should contain accessibility errors', () => {
+  // expect(() => AccessibilityEngine.check(<Button />)).not.toThrow();
+  expect(<Button />).not.toBeAccessible();
 });
 
 it('should support test instances', () => {

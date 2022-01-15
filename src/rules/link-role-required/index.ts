@@ -13,7 +13,7 @@ const rule: Rule = {
   },
   help: {
     problem:
-      'If text is clickable, we should inform the user that it behaves like a link',
+      "The text is clickable, but the user wasn't informed that it behaves like a link",
     solution:
       "Set the 'accessibilityRole' prop to 'link' or remove the 'onPress' prop",
     link: '',
