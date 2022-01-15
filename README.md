@@ -27,14 +27,12 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-  - [Goals](#goals)
-  - [Roadmap](#roadmap)
 - [How to use](#howtouse)
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Usage](#usage)
 - [Rules](#rules)
-  - [Current rules](#current-rules)
+  - [Current rules catalog](#current-rules-catalog)
   - [What's a rule anyway?](#what's-a-rule-anyway?)
   - [Proposing a new rule](#proposing-a-new-rule)
   - [ReactTestInstance](#reacttestinstance)
@@ -54,10 +52,6 @@ This project aims to make solving these problems a little easier.
 - [ ] Create an app to showcase accessiblity best-practices
 - [x] Keep it open-source!
 
-## Roadmap
-
-[Take a look at our project board.](https://github.com/aryella-lacerda/react-native-accessibility-engine/projects/1)
-
 # How to use
 
 ## Installation
@@ -72,7 +66,7 @@ yarn add react-native-accessibility-engine --dev
 
 Add the custom `toBeAccessible` matcher to your Jest config's `setupFilesAfterEnv` array:
 
-```sh
+```json
 {
   ...
   "setupFilesAfterEnv": [..., "react-native-accessibility-engine/lib/commonjs/extend-expect"],
@@ -81,7 +75,7 @@ Add the custom `toBeAccessible` matcher to your Jest config's `setupFilesAfterEn
 
 Alternately, if you have a Jest setup file, you could add the matcher there:
 
-```sh
+```json
 {
   ...
   "setupFilesAfterEnv": ["path/to/your/setup/file"],
@@ -147,7 +141,7 @@ it('should be accessible, using @testing-library/react-native', () => {
 
 # Rules
 
-## Current rules
+## Current rules catalog
 
 | ID                            | Description                                                                                                   |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -169,7 +163,7 @@ import { Text } from 'react-native';
 
 const rule: Rule = {
   id: 'link-role-required',
-  matcher: (node) => node.type === Text,
+  matcher: (node) => isText(node.type),
   assertion: (node) => {
     const { onPress, accessibilityRole } = node.props;
     if (onPress) {
@@ -179,7 +173,7 @@ const rule: Rule = {
   },
   help: {
     problem:
-      'If text is clickable, we should inform the user that it behaves like a link',
+      "The text is clickable, but the user wasn't informed that it behaves like a link",
     solution:
       "Set the 'accessibilityRole' prop to 'link' or remove the 'onPress' prop",
     link: '',
@@ -189,7 +183,7 @@ const rule: Rule = {
 
 ### ID
 
-First, we define an `id`, which doubles as the rule's name and should be as simple and self-explanatory as possible. It should also be unique, so take a look at the [rules catalog]('./rules-catalog.md') to make sure it isn't already in use. If a rule already exists with a certain `id` but you think the existing rule would be better off renamed, feel free to open a PR to explain your reasoning. ✌️
+First, we define an `id`, which doubles as the rule's name and should be as simple and self-explanatory as possible. It should also be unique, so take a look at the [rules catalog]('./rules-catalog.md') to make sure it isn't already in use.
 
 ### Matcher
 
@@ -202,7 +196,7 @@ In our `link-role-required` example, we only want to test `Text` nodes.
 
 ### Assertion
 
-An assertion is a function that accepts one of the nodes picked by the `matcher` function, tests for some condition, and returns `true` or `false`.
+An assertion is a function that accepts one of the nodes selected by the `matcher` function, tests for some condition, and returns `true` or `false`.
 
 - If you return `true`, that means the condition is met and no error is thrown.
 - If you return `false`, the assertion fails and the engine will eventually (after traversing the whole tree) throw an error with the data contained in the `help` field.
@@ -228,9 +222,7 @@ Note: For now, most rules do not have a link.
 
 ## Proposing a new rule
 
-Take a look at at the [contributing]() docs to learn how to setup the project and take a look at our style guide. Once that's done, create your own branch off of `main` and get to work. 💪
-
-Go into the `src/rules` directory and create a folder named _with the ID of your rule_. Inside this folder, create two files:
+Just clone the project, create your own branch off of `main` and get to work. 💪 Go into the `src/rules` directory and create a folder named _with the ID of your rule_. Inside this folder, create two files:
 
 - index.ts (make sure the rule object is the default export)
 - index.test.tsx
@@ -246,6 +238,8 @@ yarn typescript
 Then just be patient while someone reviews your PR and gets back to you. Thanks again for your contribution!
 
 ## ReactTestInstance
+
+For reference, this the type of the `node` object passed to the `matcher` and `assertion` functions.
 
 ```typescript
 export interface ReactTestInstance {
@@ -276,7 +270,7 @@ export interface ReactTestInstance {
 
 # Limitations
 
-Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. You can check out [the current list of rules and their descriptions here](./docs/rules-catalog.md).
+Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. Feel free to suggest any rules you feel could be helpful! ✌️
 
 # Contributing
 
@@ -285,12 +279,7 @@ Though the goal of this project is eventually to cover a wide variety of compone
 <img src="https://img.shields.io/badge/maintenance-active-green" />
 </div>
 
-This project is totally open to questions, sugestions, corrections, and community pull requests. We've tried to make contributing as painless a process as possible. Take a look at our guides:
-
-- [How do I set up and run the project?](CONTRIBUTING.md)
-- [What's a rule anyway? How do I propose a new one?](./docs/proposing-rules.md)
-- [Where's the current rules catalog?](./docs/rules-catalog.md)
-- [Anything on the project roadmap I can help with?](https://github.com/aryella-lacerda/react-native-accessibility-engine/projects/1)
+This project is totally open to questions, sugestions, corrections, and community pull requests.
 
 # Related projects
 
