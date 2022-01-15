@@ -153,6 +153,7 @@ it('should be accessible, using @testing-library/react-native', () => {
 | adjustable-role-required      | If a component has a value that can be adjusted, we should inform the user that it is adjustable              |
 | adjustable-value-required     | If a component has a value that can be adjusted, we should inform the user of its min, max, and current value |
 | disabled-state-required       | If a component has a disabled state, we should expose its enabled/disabled state to the user                  |
+| no-empty-text                 | If a text node doesn't contain text, we should add text or prevent it from rendering when it has no content   |
 
 ## What's a rule anyway?
 

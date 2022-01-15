@@ -41,6 +41,11 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
         property: 'link-role-misused',
         onPress: () => navigation.navigate('LinkRoleMisusedTest'),
       },
+      {
+        component: 'Text',
+        property: 'no-empty-text',
+        onPress: () => navigation.navigate('EmptyTextTest'),
+      },
     ];
   }, [navigation]);
 
