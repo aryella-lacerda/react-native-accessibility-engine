@@ -44,7 +44,7 @@ The React Native ecosystem is _massive_ but it's still lagging behind React Web 
 
 This project aims to make solving these problems a little easier.
 
-## Goals
+### Goals
 
 - [x] Create an engine capable of traversing a component tree making accessibility-related checks
 - [ ] Create an app to showcase accessiblity best-practices
@@ -152,11 +152,6 @@ it('should be accessible, using @testing-library/react-native', () => {
 | no-empty-text                 | If a text node doesn't contain text, we should add text or prevent it from rendering when it has no content   |
 
 # Contributing
-
-<div>
-<img src="https://img.shields.io/badge/contributors-welcome-blue" />
-<img src="https://img.shields.io/badge/maintenance-active-green" />
-</div>
 
 RNAE is totally open to questions, sugestions, corrections, and community pull requests. Though the goal of this project is eventually to cover a wide variety of components and situations, that's still a work in progress. Feel free to suggest any rules you feel could be helpful. ✌️
 
