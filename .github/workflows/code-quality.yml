@@ -20,6 +20,11 @@ jobs:
         with:
           useLockFile: false # Better for building libraries
 
+      - name: Install app dependencies
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: ./example
+
       - name: Test code
         run: yarn test --coverage
 
