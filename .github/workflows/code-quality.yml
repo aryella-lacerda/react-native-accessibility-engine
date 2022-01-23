@@ -15,15 +15,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install lib dependencies
-        uses: bahmutov/npm-install@v1
-        with:
-          useLockFile: false # Better for building libraries
-
-      - name: Install app dependencies
-        uses: bahmutov/npm-install@v1
-        with:
-          working-directory: ./example
+      - name: Install dependencies
+        run: yarn bootstrap
 
       - name: Test code
         run: yarn test --coverage
