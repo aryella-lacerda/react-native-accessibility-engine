@@ -8,8 +8,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "clean": "react-native-clean-project",
-    "postinstall": "patch-package"
+    "clean": "react-native-clean-project"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.11",
@@ -32,8 +31,6 @@
     "babel-plugin-module-resolver": "4.1.0",
     "jest": "27.4.7",
     "metro-react-native-babel-preset": "0.66.2",
-    "patch-package": "^6.4.7",
-    "postinstall-postinstall": "^2.1.0",
     "react-native-clean-project": "4.0.0",
     "react-test-renderer": "17.0.2"
   },
