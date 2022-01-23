@@ -1,0 +1,17 @@
+diff --git a/node_modules/react-native/jest/setup.js b/node_modules/react-native/jest/setup.js
+index 7787788..7a85e23 100644
+--- a/node_modules/react-native/jest/setup.js
++++ b/node_modules/react-native/jest/setup.js
+@@ -110,11 +110,7 @@ jest
+       getNativeRef: jest.fn(),
+     }),
+   )
+-  .mock('../Libraries/Modal/Modal', () => {
+-    const baseComponent = mockComponent('../Libraries/Modal/Modal');
+-    const mockModal = jest.requireActual('./mockModal');
+-    return mockModal(baseComponent);
+-  })
++  .mock('../Libraries/Modal/Modal', () => mockComponent('../Libraries/Modal/Modal'))
+   .mock('../Libraries/Components/View/View', () =>
+     mockComponent('../Libraries/Components/View/View', MockNativeMethods),
+   )
