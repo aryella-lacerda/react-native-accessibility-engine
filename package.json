@@ -29,7 +29,8 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "postinstall": "patch-package"
   },
   "keywords": [
     "react-native",
@@ -72,10 +73,12 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "husky": "7.0.4",
     "jest": "27.4.7",
+    "patch-package": "^6.4.7",
     "pod-install": "0.1.31",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "2.5.1",
     "react": "17.0.2",
-    "react-native": "0.66.4",
+    "react-native": "0.67.1",
     "release-it": "14.12.4",
     "typescript": "4.5.5"
   },
