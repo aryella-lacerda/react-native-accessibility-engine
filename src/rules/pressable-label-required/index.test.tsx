@@ -1,11 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Text, Image } from 'react-native';
 import rule from '.';
-import AccessibilityEngine from 'react-native-accessibility-engine';
+import check from '../../engine';
 import TestAssets from 'tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return AccessibilityEngine.check(component, { rules: [rule] });
+  return check(component, { rules: [rule] });
 };
 
 // To inspect these components, run the example app under "Rules -> Button Label"

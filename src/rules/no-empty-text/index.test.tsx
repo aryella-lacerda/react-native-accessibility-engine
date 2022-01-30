@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import rule from '.';
-import AccessibilityEngine from 'react-native-accessibility-engine';
+import check from '../../engine';
 
 const run = (component: React.ReactElement<any>) => {
-  return AccessibilityEngine.check(component, { rules: [rule] });
+  return check(component, { rules: [rule] });
 };
 
 it('throws if text node has no content', () => {

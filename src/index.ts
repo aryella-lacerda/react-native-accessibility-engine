@@ -1,9 +1,4 @@
-import check from './engine';
-
-// The check function remains for backwards-compatibility.
-// The prefered method is now jest matchers.
-export default {
-  check,
-};
-
+import * as extensions from './matchers';
 export * from './types';
+
+expect.extend(extensions);
