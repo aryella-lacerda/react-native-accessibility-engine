@@ -11,8 +11,12 @@ Make accessibility-related assertions in React Native
 </h3>
 
 <div align="center">
-  <img alt="npm" src="https://img.shields.io/npm/v/react-native-accessibility-engine">
-  <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+  <a href="https://www.npmjs.com/package/react-native-accessibility-engine">
+    <img alt="npm" src="https://img.shields.io/npm/v/react-native-accessibility-engine">
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+  </a>
   <img src="https://img.shields.io/badge/contributors-welcome-blue" />
   <img src="https://img.shields.io/badge/maintenance-active-green" />
   <img src="https://img.shields.io/badge/support-ios|android-purple" />
