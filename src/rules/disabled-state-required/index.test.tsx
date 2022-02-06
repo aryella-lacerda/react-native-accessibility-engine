@@ -2,11 +2,11 @@ import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import Slider from '@react-native-community/slider';
 import rule from '.';
-import AccessibilityEngine from 'react-native-accessibility-engine';
+import check from '../../engine';
 import TestAssets from 'tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return AccessibilityEngine.check(component, { rules: [rule] });
+  return check(component, { rules: [rule] });
 };
 
 describe('buttons', () => {

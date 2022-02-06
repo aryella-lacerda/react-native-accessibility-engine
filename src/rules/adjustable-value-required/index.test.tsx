@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from '@react-native-community/slider';
 import rule from '.';
-import AccessibilityEngine from 'react-native-accessibility-engine';
+import check from '../../engine';
 
 const run = (component: React.ReactElement<any>) => {
-  return AccessibilityEngine.check(component, { rules: [rule] });
+  return check(component, { rules: [rule] });
 };
 
 it("throws if 'accessibilityValue' prop not defined", () => {

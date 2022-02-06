@@ -1,6 +1,6 @@
 {
   "name": "react-native-accessibility-engine",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Make accessibility-related assertions on React Native code using React Test Renderer",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -25,7 +25,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepare": "husky install && bob build && patch-package",
+    "prepare": "husky install && patch-package && bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
