@@ -27,16 +27,29 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
+    - [Goals](#goals)
 - [How to use](#how-to-use)
   - [Installation](#installation)
   - [Configuration](#configuration)
+    - [Javascript](#javascript)
+    - [Typescript](#typescript)
   - [Usage](#usage)
+    - [With React elements](#with-react-elements)
+    - [With React test instances](#with-react-test-instances)
+- [Migration guides](#migration-guides)
+  - [From 0.x to 1.x](#from-0x-to-1x)
+  - [From 1.x to 2.x](#from-1x-to-2x)
 - [Current rules](#current-rules)
 - [Contributing](#contributing)
-  - [What's a rule anyway?](#what's-a-rule-anyway?)
+  - [What's a rule anyway?](#whats-a-rule-anyway)
+    - [ID](#id)
+    - [Matcher](#matcher)
+    - [Assertion](#assertion)
+    - [Help](#help)
   - [Proposing a new rule](#proposing-a-new-rule)
   - [ReactTestInstance](#reacttestinstance)
-- [Related Projects](#related-projects)
+- [Related projects](#related-projects)
+- [License](#license)
 
 # Intro
 
@@ -62,16 +75,22 @@ yarn add react-native-accessibility-engine --dev
 
 ## Configuration
 
-Add the custom `toBeAccessible` matcher to your Jest config's `setupFilesAfterEnv` array:
+### Javascript
+
+Extend Jest's `expect` with a new `toBeAccessible()` matcher by adding this to your Jest config's `setupFilesAfterEnv` array:
 
 ```sh
 {
   ...
-  "setupFilesAfterEnv": [..., "react-native-accessibility-engine/lib/commonjs/extend-expect"],
+  "setupFilesAfterEnv": [..., "react-native-accessibility-engine"],
 }
 ```
 
-Alternately, if you have a Jest setup file, you could add the matcher there:
+### Typescript
+
+Adding the lib directly to Jest's `setupFilesAfterEnv` array extends Jest's matcher but doesn't import the new matcher types.
+
+You need to import `react-native-accessibilit-engine` at least once in your codebase for the types to be imported. You can do that in an entry file if you'd like. If you have a Jest setup file, however, you could kill two birds with one stone by importing it there:
 
 ```sh
 {
@@ -82,7 +101,7 @@ Alternately, if you have a Jest setup file, you could add the matcher there:
 
 ```typescript
 // At the top of your setup file
-import 'react-native-accessibility-engine/lib/commonjs/extend-expect';
+import 'react-native-accessibility-engine';
 ```
 
 ## Usage
@@ -135,6 +154,55 @@ it('should be accessible, using @testing-library/react-native', () => {
   const button = getByA11yRole('button');
   expect(button).toBeAccessible();
 });
+```
+
+# Migration guides
+
+## From 0.x to 1.x
+
+- Though the `check` function's optional second argument was never officially documented, a breaking change has occurred to it. If you are using it, I'm afraid we are deprecating the `check` function in favor of the `.toBeAccessible()` matcher, which does not currently recieve any arguments. This is intentional.
+
+```typescript
+{
+  // 0.x
+  it('should contain no accessibility errors', () => {
+    expect(() => Engine.check(<Component />, [...rules])).not.toThrow();
+  });
+
+  // 1.x
+  it('should contain no accessibility errors', () => {
+    expect(<Component />).toBeAccessible();
+  });
+}
+```
+
+## From 1.x to 2.x
+
+- Change the path from which you import the new matcher:
+
+```typescript
+{
+  // 1.x
+  "setupFilesAfterEnv": [..., "react-native-accessibility-engine/lib/commonjs/extend-expect"],
+  // 2.x
+  "setupFilesAfterEnv": [..., "react-native-accessibility-engine"],
+}
+```
+
+- The `check` function, which was deprecated in 1.x, has been removed from 2.x. It is still used internally, but the `.toBeAccessible()` matcher is the only thing exposed in 2.x.
+
+```typescript
+{
+  // 0.x and possibly 1.x
+  it('should contain no accessibility errors', () => {
+    expect(() => Engine.check(<Component />)).not.toThrow();
+  });
+
+  // 2.x
+  it('should contain no accessibility errors', () => {
+    expect(<Component />).toBeAccessible();
+  });
+}
 ```
 
 # Current rules
