@@ -73,7 +73,7 @@
     "husky": "7.0.4",
     "jest": "27.5.1",
     "patch-package": "6.4.7",
-    "pod-install": "0.1.31",
+    "pod-install": "0.1.32",
     "postinstall-postinstall": "2.1.0",
     "prettier": "2.5.1",
     "react": "17.0.2",
