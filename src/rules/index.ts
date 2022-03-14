@@ -7,6 +7,7 @@ import disabledStateRequired from './disabled-state-required';
 import linkRoleRequired from './link-role-required';
 import linkRoleMisused from './link-role-misused';
 import noEmptyText from './no-empty-text';
+import noEmptyPressable from './no-empty-pressable';
 
 const rules = [
   pressableRoleRequired,
@@ -18,6 +19,7 @@ const rules = [
   linkRoleRequired,
   linkRoleMisused,
   noEmptyText,
+  noEmptyPressable,
 ];
 
 export default rules;
