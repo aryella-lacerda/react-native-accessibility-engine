@@ -7,6 +7,7 @@ import ButtonStateTest from './button-state-test';
 import LinkRoleRequiredTest from './link-role-required-test';
 import LinkRoleMisusedTest from './link-role-misused-test';
 import EmptyTextTest from './empty-text-test';
+import ImageButtonRoleTest from './imagebutton-role-test';
 
 export type ScreensParamList = {
   TestingGround: undefined;
@@ -17,6 +18,7 @@ export type ScreensParamList = {
   LinkRoleRequiredTest: undefined;
   LinkRoleMisusedTest: undefined;
   EmptyTextTest: undefined;
+  ImageButtonRoleTest: undefined;
 };
 
 interface ScreenProps {
@@ -83,6 +85,14 @@ const screens: ScreenProps[] = [
     key: 'EmptyTextTest',
     options: {
       title: 'Empty text',
+    },
+  },
+  {
+    name: 'ImageButtonRoleTest',
+    component: ImageButtonRoleTest,
+    key: 'ImageButtonRoleTest',
+    options: {
+      title: 'Imagebutton Role',
     },
   },
 ];

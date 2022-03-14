@@ -46,6 +46,11 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
         property: 'no-empty-text',
         onPress: () => navigation.navigate('EmptyTextTest'),
       },
+      {
+        component: 'Image Button',
+        property: 'imagebutton-role-text',
+        onPress: () => navigation.navigate('ImageButtonRoleTest'),
+      },
     ];
   }, [navigation]);
 

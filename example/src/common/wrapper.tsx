@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <View style={styles.wrapper}>{children}</View>
+const Wrapper: React.FC = ({ children, ...props }) => (
+  <View style={styles.wrapper} {...props}>
+    {children}
+  </View>
 );
 
 export default Wrapper;

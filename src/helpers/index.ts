@@ -1,6 +1,8 @@
 export { default as isPressable } from './isPressable';
 export { default as isAdjustable } from './isAdjustable';
 export { default as isText } from './isText';
+export { default as isImage } from './isImage';
+
 export { default as isHidden } from './isHidden';
 
 export { default as canBeDisabled } from './canBeDisabled';
