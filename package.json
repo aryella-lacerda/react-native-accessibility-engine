@@ -58,7 +58,7 @@
     "@testing-library/react-native": "9.0.0",
     "@types/jest": "27.4.1",
     "@types/lodash.groupby": "4.6.6",
-    "@types/react": "17.0.39",
+    "@types/react": "17.0.40",
     "@types/react-native": "0.67.3",
     "@types/react-test-renderer": "17.0.1",
     "babel-jest": "27.5.1",
