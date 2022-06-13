@@ -69,3 +69,13 @@ it("doesn't throw if 'accessibilityRole' prop has the value 'radio'", () => {
 
   expect(() => run(<Button />)).not.toThrowError(rule.help.problem);
 });
+
+it("doesn't throw if 'accessibilityRole' prop has the value 'checkbox'", () => {
+  const Button = () => (
+    <TouchableOpacity accessibilityRole={'checkbox'}>
+      <Image source={TestAssets.heart['32px']} />
+    </TouchableOpacity>
+  );
+
+  expect(() => run(<Button />)).not.toThrowError(rule.help.problem);
+});

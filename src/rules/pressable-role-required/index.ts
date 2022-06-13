@@ -1,7 +1,7 @@
 import type { Rule } from '../../types';
 import { isPressable } from '../../helpers';
 
-const allowedRoles = ['button', 'link', 'imagebutton', 'radio'];
+const allowedRoles = ['button', 'link', 'imagebutton', 'radio', 'checkbox'];
 const allowedRolesMessage = allowedRoles.join(' or ');
 
 const rule: Rule = {
@@ -10,7 +10,7 @@ const rule: Rule = {
   assertion: (node) => allowedRoles.includes(node.props.accessibilityRole),
   help: {
     problem:
-      "This component is pressable but the user hasn't been informed that it behaves like a button/link/radio",
+      "This component is pressable but the user hasn't been informed that it behaves like a button/link/radio/checkbox",
     solution: `Set the 'accessibilityRole' prop to ${allowedRolesMessage}`,
     link: '',
   },
