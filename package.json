@@ -76,8 +76,8 @@
     "pod-install": "0.1.32",
     "postinstall-postinstall": "2.1.0",
     "prettier": "2.5.1",
-    "react": "17.0.2",
-    "react-native": "0.67.3",
+    "react": "^18.2.0",
+    "react-native": "^0.70.1",
     "release-it": "14.12.5",
     "typescript": "4.6.2"
   },
@@ -167,6 +167,6 @@
   },
   "dependencies": {
     "lodash.groupby": "^4.6.0",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^18.2.0"
   }
 }
