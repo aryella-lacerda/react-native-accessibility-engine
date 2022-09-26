@@ -31,7 +31,7 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-    - [Goals](#goals)
+  - [Goals](#goals)
 - [How to use](#how-to-use)
   - [Installation](#installation)
   - [Configuration](#configuration)
@@ -71,8 +71,20 @@ This project aims to make solving these problems a little easier.
 
 ## Installation
 
+React 18 introduced a breaking change related to React Test Renderer, which this engine uses. To accomodate all users, React Test Renderer is now a peer dependency. You should install the version compatible with your version of React.
+
+### React >= 18
+
 ```sh
-npm install react-native-accessibility-engine --save-dev
+npm install react-native-accessibility-engine react-test-renderer --save-dev
+# or
+yarn add react-native-accessibility-engine react-test-renderer --dev
+```
+
+### React < 18
+
+```sh
+npm install react-native-accessibility-engine react-test-renderer@^17.0.2 --save-dev
 # or
 yarn add react-native-accessibility-engine --dev
 ```
