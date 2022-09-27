@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  prerelease:
     runs-on: ubuntu-latest
 
     env:
@@ -32,7 +32,7 @@ jobs:
         run: npm config set scripts-prepend-node-path auto
 
       - name: Generate version number, commit, tag, and GitHub release
-        run: yarn release --ci
+        run: yarn release --ci --preRelease=rc
 
       - name: Publish to NPM
         uses: JS-DevTools/npm-publish@v1

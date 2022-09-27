@@ -34,6 +34,8 @@ Make accessibility-related assertions in React Native
     - [Goals](#goals)
 - [How to use](#how-to-use)
   - [Installation](#installation)
+    - [React >= 18](#react--18)
+    - [React < 18](#react--18-1)
   - [Configuration](#configuration)
     - [Javascript](#javascript)
     - [Typescript](#typescript)
@@ -43,6 +45,7 @@ Make accessibility-related assertions in React Native
 - [Migration guides](#migration-guides)
   - [From 0.x to 1.x](#from-0x-to-1x)
   - [From 1.x to 2.x](#from-1x-to-2x)
+  - [From 2.x to 3.x](#from-2x-to-3x)
 - [Current rules](#current-rules)
 - [Contributing](#contributing)
   - [What's a rule anyway?](#whats-a-rule-anyway)
@@ -71,10 +74,22 @@ This project aims to make solving these problems a little easier.
 
 ## Installation
 
+React 18 introduced a breaking change related to React Test Renderer, which this engine uses. To accommodate all users, React Test Renderer is now a peer dependency. You should install the version compatible with your version of React.
+
+### React >= 18
+
 ```sh
-npm install react-native-accessibility-engine --save-dev
+npm install react-native-accessibility-engine react-test-renderer --save-dev
 # or
-yarn add react-native-accessibility-engine --dev
+yarn add react-native-accessibility-engine react-test-renderer --dev
+```
+
+### React < 18
+
+```sh
+npm install react-native-accessibility-engine react-test-renderer@^17.0.2 --save-dev
+# or
+yarn add react-native-accessibility-engine react-test-renderer@^17.0.2 --dev
 ```
 
 ## Configuration
@@ -207,6 +222,25 @@ it('should be accessible, using @testing-library/react-native', () => {
     expect(<Component />).toBeAccessible();
   });
 }
+```
+
+## From 2.x to 3.x
+
+Because of breaking changes introducted in React 18, `react-test-renderer` is now a peer dependency.
+
+```sh
+
+## If you are using React < 18
+
+npm install react-native-accessibility-engine react-test-renderer@^17.0.2 --save-dev
+# or
+yarn add react-native-accessibility-engine react-test-renderer@^17.0.2 --dev
+
+## If you are using React >= 18
+
+npm install react-native-accessibility-engine react-test-renderer --save-dev
+# or
+yarn add react-native-accessibility-engine react-test-renderer --dev
 ```
 
 # Current rules
