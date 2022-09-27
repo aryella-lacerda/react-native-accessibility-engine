@@ -74,7 +74,7 @@ This project aims to make solving these problems a little easier.
 
 ## Installation
 
-React 18 introduced a breaking change related to React Test Renderer, which this engine uses. To accomodate all users, React Test Renderer is now a peer dependency. You should install the version compatible with your version of React.
+React 18 introduced a breaking change related to React Test Renderer, which this engine uses. To accommodate all users, React Test Renderer is now a peer dependency. You should install the version compatible with your version of React.
 
 ### React >= 18
 
