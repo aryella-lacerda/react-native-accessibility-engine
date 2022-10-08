@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { StyleSheet, ScrollView, Text } from 'react-native';
-import { Label, Wrapper } from '../common';
+import {StyleSheet, ScrollView, Text} from 'react-native';
+import {Label, Wrapper} from '../common';
 
 const Texts = () => {
   return (

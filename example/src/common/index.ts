@@ -3,4 +3,4 @@ import Label from './label';
 import Card from './card';
 import Wrapper from './wrapper';
 
-export { Section, Label, Wrapper, Card };
+export {Section, Label, Wrapper, Card};

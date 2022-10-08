@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Image, View } from 'react-native';
+import {TouchableOpacity, Text, StyleSheet, Image, View} from 'react-native';
 import Images from '../images';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   onPress: () => void;
 }
 
-const Card: React.FC<Props> = ({ component, property, onPress }) => {
+const Card: React.FC<Props> = ({component, property, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View>

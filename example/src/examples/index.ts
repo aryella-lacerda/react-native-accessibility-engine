@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 
 import ButtonLabelTest from './button-label-test';
 import ButtonAccessibleTest from './button-accessible-test';

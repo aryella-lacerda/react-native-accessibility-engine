@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import Screens, { ScreensParamList } from '../examples';
+import {createStackNavigator} from '@react-navigation/stack';
+import Screens, {ScreensParamList} from '../examples';
 import TestingGround from '../TestingGround';
-export type { ScreensParamList };
+export type {ScreensParamList};
 
 const Stack = createStackNavigator<ScreensParamList>();
 
@@ -11,8 +11,7 @@ const RootNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         headerBackTitleVisible: false,
-      }}
-    >
+      }}>
       <Stack.Screen
         name={'TestingGround'}
         component={TestingGround}
@@ -20,7 +19,7 @@ const RootNavigator = () => {
           title: 'Testing Ground',
         }}
       />
-      {Screens.map((screen) => (
+      {Screens.map(screen => (
         // @ts-ignore
         <Stack.Screen {...screen} />
       ))}
