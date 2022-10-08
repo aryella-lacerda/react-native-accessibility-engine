@@ -1,18 +1,14 @@
 // @ts-nocheck
 import React from 'react';
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
-import { Slider as DeprecatedRNSlider } from 'react-native';
 import CommunitySlider from '@react-native-community/slider';
 import isAdjustable from './isAdjustable';
-
-console.error = jest.fn();
 
 const CustomSlider = () => (
   <CommunitySlider minimumValue={1} maximumValue={100} />
 );
 
 const cases = [
-  ['deprecated react-native Slider', DeprecatedRNSlider, 1],
   ['community Slider', CommunitySlider, 1],
   ['any slider component in a wrapper', CustomSlider, 1],
 ];
