@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
-import { Label, Wrapper } from '../common';
+import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
+import {Label, Wrapper} from '../common';
 
 import Images from '../images';
 

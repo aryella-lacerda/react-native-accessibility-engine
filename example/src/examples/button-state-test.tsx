@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { Label, Wrapper } from '../common';
+import {StyleSheet, ScrollView, TouchableOpacity, Image} from 'react-native';
+import {Label, Wrapper} from '../common';
 
 import Images from '../images';
 
@@ -35,8 +35,7 @@ const Buttons = () => {
         />
         <TouchableOpacity
           style={styles.button}
-          accessibilityState={{ expanded: true }}
-        >
+          accessibilityState={{expanded: true}}>
           <Image source={Images.heart['32px']} />
         </TouchableOpacity>
       </Wrapper>
@@ -49,8 +48,7 @@ const Buttons = () => {
         />
         <TouchableOpacity
           style={styles.button}
-          accessibilityState={{ disabled: true }}
-        >
+          accessibilityState={{disabled: true}}>
           <Image source={Images.heart['32px']} />
         </TouchableOpacity>
       </Wrapper>
@@ -63,8 +61,7 @@ const Buttons = () => {
         />
         <TouchableOpacity
           style={styles.button}
-          accessibilityState={{ disabled: false }}
-        >
+          accessibilityState={{disabled: false}}>
           <Image source={Images.heart['32px']} />
         </TouchableOpacity>
       </Wrapper>

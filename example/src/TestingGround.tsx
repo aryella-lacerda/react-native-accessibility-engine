@@ -1,14 +1,14 @@
 import React from 'react';
-import { FlatList, Text, View, StyleSheet } from 'react-native';
-import type { StackNavigationProp } from '@react-navigation/stack';
-import type { ScreensParamList } from './navigation/RootNavigator';
-import { Card } from './common';
+import {FlatList, Text, View, StyleSheet} from 'react-native';
+import type {StackNavigationProp} from '@react-navigation/stack';
+import type {ScreensParamList} from './navigation/RootNavigator';
+import {Card} from './common';
 
 interface Props {
   navigation: StackNavigationProp<ScreensParamList, 'TestingGround'>;
 }
 
-const TestingGround: React.FC<Props> = ({ navigation }) => {
+const TestingGround: React.FC<Props> = ({navigation}) => {
   const data = React.useMemo(() => {
     return [
       {
@@ -52,8 +52,8 @@ const TestingGround: React.FC<Props> = ({ navigation }) => {
   return (
     <FlatList
       data={data}
-      keyExtractor={(item) => item.property}
-      renderItem={({ item }) => <Card {...item} />}
+      keyExtractor={item => item.property}
+      renderItem={({item}) => <Card {...item} />}
       ItemSeparatorComponent={Separator}
       ListHeaderComponent={Header}
     />
