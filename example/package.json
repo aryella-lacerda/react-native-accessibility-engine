@@ -14,7 +14,7 @@
     "@react-native-community/masked-view": "0.1.11",
     "@react-navigation/native": "6.0.13",
     "@react-navigation/stack": "6.3.2",
-    "react": "17.0.2",
+    "react": "18.2.0",
     "react-native": "0.67.3",
     "react-native-gesture-handler": "2.7.0",
     "react-native-reanimated": "2.10.0",
@@ -32,7 +32,7 @@
     "jest": "27.5.1",
     "metro-react-native-babel-preset": "0.73.1",
     "react-native-clean-project": "4.0.1",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "18.2.0"
   },
   "jest": {
     "preset": "react-native"
