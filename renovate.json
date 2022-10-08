@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "labels": ["dependencies"],
-  "prConcurrentLimit": 10
+  "prConcurrentLimit": 4
 }
