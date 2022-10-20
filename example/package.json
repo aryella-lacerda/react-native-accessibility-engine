@@ -22,8 +22,8 @@
     "react-native-screens": "3.18.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.3",
-    "@babel/runtime": "7.19.0",
+    "@babel/core": "7.19.6",
+    "@babel/runtime": "7.19.4",
     "@tsconfig/react-native": "2.0.2",
     "@types/jest": "29.1.2",
     "@types/react-test-renderer": "18.0.0",
