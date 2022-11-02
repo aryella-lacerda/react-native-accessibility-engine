@@ -1,7 +1,7 @@
 import type { Rule } from '../../types';
 import { isPressable } from '../../helpers';
 
-const allowedRoles = ['button', 'link', 'imagebutton', 'radio'];
+const allowedRoles = ['button', 'link', 'imagebutton', 'radio', 'tab'];
 const allowedRolesMessage = allowedRoles.join(' or ');
 
 const rule: Rule = {
