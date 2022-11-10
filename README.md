@@ -31,7 +31,7 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-    - [Goals](#goals)
+  - [Goals](#goals)
 - [How to use](#how-to-use)
   - [Installation](#installation)
     - [React >= 18](#react--18)
@@ -174,6 +174,27 @@ it('should be accessible, using @testing-library/react-native', () => {
   expect(button).toBeAccessible();
 });
 ```
+
+### With custom options
+
+We currently support customatization of this jest matcher with the follow options:
+
+```tsx
+export type Options = {
+  // Pass in the subset of rules you want to run
+  rule?: Rule[];
+  // Return the violation array instead of an error
+  returnViolations?: boolean;
+  // Utilize for custom handling of jest test matcher output
+  overrideReturnFunctionality?: (violations: Violation[]) => Violation[];
+};
+```
+
+| Option                      | Description                                                                                                      |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| rules                       | Pass an array of ruleIds you wish to enable for your jest test. See rule ids in Current Rules section of Readme. |
+| returnViolations            | Returns the violation array instead of error message to the jest matcher.                                        |
+| overrideReturnFunctionality | Overrides the return of the jest matcher to have a custom functionality with the violation array.                |
 
 # Migration guides
 
