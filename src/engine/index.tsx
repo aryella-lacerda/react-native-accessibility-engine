@@ -6,18 +6,20 @@ import type { Rule, Violation } from '../types';
 import { isHidden, isReactTestInstance, getPathToComponent } from '../helpers';
 import { generateCheckError } from '../utils';
 
-class AccessibilityError extends Error {
+export class AccessibilityError extends Error {
   constructor(message = '') {
     super(message);
     this.name = 'AccessibilityError';
   }
 }
 
-type Options = {
+export type Options = {
   // Pass in the subset of rules you want to run
   rules?: Rule[];
   // Return the violation array instead of an error
   returnViolations?: boolean;
+  // Utilize for custom handling of jest test matcher output
+  overrideReturnFunctionality?: (violations: Violation[]) => Violation[];
 };
 
 const engine = (
@@ -63,6 +65,10 @@ const engine = (
         });
       }
     }
+  }
+
+  if (options?.overrideReturnFunctionality) {
+    return options.overrideReturnFunctionality(violations);
   }
 
   if (options?.returnViolations) {
