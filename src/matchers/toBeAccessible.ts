@@ -1,10 +1,14 @@
 import type { ReactElement } from 'react';
-import check from '../engine';
+import check, { Options } from '../engine';
 import { generateMatcherError } from '../utils';
 
-export default function toBeAccessible(received: ReactElement) {
+export default function toBeAccessible(
+  received: ReactElement,
+  options?: Options
+) {
   const violations = check(received, {
     returnViolations: true,
+    ...options,
   });
 
   if (violations.length) {
