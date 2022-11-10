@@ -58,13 +58,13 @@ it('should allow custom behavior after jest matcher check ', () => {
 it('should allow configurable rules for the jest matcher', () => {
   expect(() =>
     expect(<NonAccessibleButton />).toBeAccessible({
-      rules: [],
+      ruleIds: [],
     })
   ).not.toThrow();
 
   expect(() =>
     expect(<NonAccessibleButton />).toBeAccessible({
-      rules: [pressableAccessibleRequired],
+      ruleIds: ['pressable-accessible-required'],
     })
   ).toThrow(pressableAccessibleRequired.help.problem);
 });

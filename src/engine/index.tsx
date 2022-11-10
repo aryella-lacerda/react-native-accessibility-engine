@@ -2,7 +2,8 @@ import type React from 'react';
 import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
 
 import allRules from '../rules';
-import type { Rule, Violation } from '../types';
+import type { Violation } from '../types';
+import type { RuleId } from 'src/types/Rule';
 import { isHidden, isReactTestInstance, getPathToComponent } from '../helpers';
 import { generateCheckError } from '../utils';
 
@@ -15,7 +16,7 @@ export class AccessibilityError extends Error {
 
 export type Options = {
   // Pass in the subset of rules you want to run
-  rules?: Rule[];
+  ruleIds?: RuleId[];
   // Return the violation array instead of an error
   returnViolations?: boolean;
   // Utilize for custom handling of jest test matcher output
@@ -30,11 +31,20 @@ const engine = (
     ? treeOrTestInstance
     : TestRenderer.create(treeOrTestInstance).root;
 
-  const _rules = options?.rules || allRules;
+  const _rules = options?.ruleIds
+    ? options.ruleIds.map((id: RuleId) =>
+        allRules.find((rule) => rule.id === id)
+      )
+    : allRules;
   const violations: Violation[] = [];
 
   // For every rule
   for (const rule of _rules) {
+    // Do not allow any undefined rule execute matching
+    if (!rule) {
+      continue;
+    }
+
     // Traverse the component tree below the root to find the components that should be tested
     const matchedComponents = testInstance.findAll(rule.matcher, {
       deep: true,

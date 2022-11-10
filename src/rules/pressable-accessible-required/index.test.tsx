@@ -5,7 +5,7 @@ import check from '../../engine';
 import TestAssets from 'tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return check(component, { rules: [rule] });
+  return check(component, { ruleIds: [rule.id] });
 };
 
 // To inspect these components, run the example app under "Rules -> Button Accessible"

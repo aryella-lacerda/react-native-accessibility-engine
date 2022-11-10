@@ -4,7 +4,7 @@ import rule from '.';
 import check from '../../engine';
 
 const run = (component: React.ReactElement<any>) => {
-  return check(component, { rules: [rule] });
+  return check(component, { ruleIds: [rule.id] });
 };
 
 it("throws if 'accessibilityValue' prop not defined", () => {
