@@ -42,6 +42,7 @@ Make accessibility-related assertions in React Native
   - [Usage](#usage)
     - [With React elements](#with-react-elements)
     - [With React test instances](#with-react-test-instances)
+    - [With custom options](#with-custom-options)
 - [Migration guides](#migration-guides)
   - [From 0.x to 1.x](#from-0x-to-1x)
   - [From 1.x to 2.x](#from-1x-to-2x)
@@ -190,11 +191,19 @@ export type Options = {
 };
 ```
 
-| Option                      | Description                                                                                                      |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| rules                       | Pass an array of ruleIds you wish to enable for your jest test. See rule ids in Current Rules section of Readme. |
-| returnViolations            | Returns the violation array instead of error message to the jest matcher.                                        |
-| overrideReturnFunctionality | Overrides the return of the jest matcher to have a custom functionality with the violation array.                |
+We can run `.toBeAccessible` and pass one or more of these options to customize the behavior of the jest matcher.
+
+```tsx
+it('should be accessible, using @testing-library/react-native', () => {
+  expect(button).toBeAccessible({ ruleIds: ['no-empty-text'] });
+});
+```
+
+| Option                      | Description                                                                                                       |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| ruleIds                     | Pass an array of rule ids you wish to enable for your jest test. See rule ids in Current Rules section of Readme. |
+| returnViolations            | Returns the violation array instead of error message to the jest matcher.                                         |
+| overrideReturnFunctionality | Overrides the return of the jest matcher to have a custom functionality with the violation array.                 |
 
 # Migration guides
 
