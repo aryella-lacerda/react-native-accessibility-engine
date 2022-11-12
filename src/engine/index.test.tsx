@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { render } from '@testing-library/react-native';
-import Icons from 'tests/assets';
+import Icons from '@tests/assets';
 import check from '.';
 
 const Button = () => (
