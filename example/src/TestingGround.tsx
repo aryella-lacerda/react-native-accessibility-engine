@@ -46,6 +46,11 @@ const TestingGround: React.FC<Props> = ({navigation}) => {
         property: 'no-empty-text',
         onPress: () => navigation.navigate('EmptyTextTest'),
       },
+      {
+        component: 'Checkbox',
+        property: 'checked-role-required',
+        onPress: () => navigation.navigate('CheckboxTest'),
+      },
     ];
   }, [navigation]);
 
