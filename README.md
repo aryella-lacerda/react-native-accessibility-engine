@@ -201,7 +201,13 @@ global.__CUSTOM_VIOLATION_HANDLER__ = (violations) => {
 global.__A11Y_RULES__ = [`no-empty-text`];
 ```
 
-`rules` can also be declared in`jest.config.ts|js`, or `package.json` using jest `globals` config variables with the same key names (See [globals](https://jestjs.io/docs/configuration#globals-object)).
+`rules` can also be configured in`jest.config.ts|js`, or `package.json` using jest `globals` (See [globals](https://jestjs.io/docs/configuration#globals-object)).
+
+```tsx
+ "globals": {
+      "__A11Y_RULES__": ["no-empty-text"]
+    }
+```
 
 ### Per matcher overrides
 
