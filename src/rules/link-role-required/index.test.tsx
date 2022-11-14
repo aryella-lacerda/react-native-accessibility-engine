@@ -4,7 +4,7 @@ import rule from '.';
 import check from '../../engine';
 
 const run = (component: React.ReactElement<any>) => {
-  return check(component, { ruleIds: [rule.id] });
+  return check(component, { rules: [rule.id] });
 };
 
 // To inspect these components, run the example app under "Rules -> Adjustable Role"

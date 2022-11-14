@@ -6,7 +6,7 @@ import check from '../../engine';
 import TestAssets from 'tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return check(component, { ruleIds: [rule.id] });
+  return check(component, { rules: [rule.id] });
 };
 
 describe('buttons', () => {

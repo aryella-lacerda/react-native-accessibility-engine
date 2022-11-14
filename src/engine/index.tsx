@@ -16,11 +16,11 @@ export class AccessibilityError extends Error {
 
 export type Options = {
   // Pass in the subset of rules you want to run
-  ruleIds?: RuleId[];
+  rules?: RuleId[];
   // Return the violation array instead of an error
   returnViolations?: boolean;
   // Utilize for custom handling of jest test matcher output
-  overrideReturnFunctionality?: (violations: Violation[]) => Violation[];
+  customViolationHandler?: (violations: Violation[]) => Violation[];
 };
 
 const engine = (
@@ -31,10 +31,8 @@ const engine = (
     ? treeOrTestInstance
     : TestRenderer.create(treeOrTestInstance).root;
 
-  const _rules = options?.ruleIds
-    ? options.ruleIds.map((id: RuleId) =>
-        allRules.find((rule) => rule.id === id)
-      )
+  const _rules = options?.rules
+    ? options.rules.map((id: RuleId) => allRules.find((rule) => rule.id === id))
     : allRules;
   const violations: Violation[] = [];
 
@@ -77,8 +75,8 @@ const engine = (
     }
   }
 
-  if (options?.overrideReturnFunctionality) {
-    return options.overrideReturnFunctionality(violations);
+  if (options?.customViolationHandler) {
+    return options.customViolationHandler(violations);
   }
 
   if (options?.returnViolations) {
