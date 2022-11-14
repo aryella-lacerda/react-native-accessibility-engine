@@ -17,4 +17,5 @@ export type RuleId =
   | 'adjustable-value-required'
   | 'link-role-required'
   | 'link-role-misused'
-  | 'no-empty-text';
+  | 'no-empty-text'
+  | 'checked-state-required';

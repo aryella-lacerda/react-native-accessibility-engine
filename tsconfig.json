@@ -3,7 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "react-native-accessibility-engine": ["./src/index"],
-      "tests/*": ["./src/__tests__/*"]
+      "@tests/*": ["./src/__tests__/*"],
+      "@assets/*": ["./assets/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@rules/*": ["./src/rules/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@matchers/*": ["./src/matchers/*"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

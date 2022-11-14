@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text, Image } from 'react-native';
 import rule from '.';
 import check from '../../engine';
-import TestAssets from 'tests/assets';
+import TestAssets from '@tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
   return check(component, { rules: [rule.id] });

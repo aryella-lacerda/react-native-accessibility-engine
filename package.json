@@ -1,6 +1,6 @@
 {
   "name": "react-native-accessibility-engine",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Make accessibility-related assertions on React Native code using React Test Renderer",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -96,7 +96,12 @@
     "preset": "react-native",
     "moduleNameMapper": {
       "react-native-accessibility-engine": "<rootDir>/src/index",
-      "tests/(.*)": "<rootDir>/src/__tests__/$1"
+      "@tests/(.*)": "<rootDir>/src/__tests__/$1",
+      "@assets/(.*)": "<rootDir>/assets/$1",
+      "@helpers/(.*)": "<rootDir>/src/helpers/$1",
+      "@rules/(.*)": "<rootDir>/src/rules/$1",
+      "@utils/(.*)": "<rootDir>/src/utils/$1",
+      "@matchers/(.*)": "<rootDir>/src/matchers/$1"
     },
     "modulePathIgnorePatterns": [
       "<rootDir>/src/__tests__/assets",

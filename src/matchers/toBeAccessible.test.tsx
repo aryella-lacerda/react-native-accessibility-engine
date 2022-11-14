@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
+import Icons from '@tests/assets';
 import { AccessibilityError } from '../engine';
-import Icons from 'tests/assets';
 import pressableAccessibleRequired from '../rules/pressable-accessible-required';
 
 const NonAccessibleButton = () => (

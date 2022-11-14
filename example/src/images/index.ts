@@ -13,4 +13,12 @@ export default {
       '24px': require('./right-chevron_24px.png'),
     },
   },
+  checkbox: {
+    filled: {
+      '512px': require('./checkbox_filled_512px.png'),
+    },
+    empty: {
+      '512px': require('./checkbox_empty_512px.png'),
+    },
+  },
 };
