@@ -1,5 +1,17 @@
+name: Prerelease
+
 on:
   workflow_dispatch:
+    inputs:
+      version_bump_type:
+        description: 'Would you like to manually control the version bump?'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
 
 jobs:
   prerelease:
@@ -32,7 +44,7 @@ jobs:
         run: npm config set scripts-prepend-node-path auto
 
       - name: Generate version number, commit, tag, and GitHub release
-        run: yarn release --ci --preRelease=rc
+        run: yarn release ${{ inputs.version_bump_type }} --ci --preRelease=rc
 
       - name: Publish to NPM
         uses: JS-DevTools/npm-publish@v1
