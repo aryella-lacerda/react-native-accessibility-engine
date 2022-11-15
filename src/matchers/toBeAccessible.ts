@@ -1,10 +1,21 @@
 import type { ReactElement } from 'react';
 import check from '../engine';
 import { generateMatcherError } from '../utils';
+import type { Options } from '../engine/index';
 
-export default function toBeAccessible(received: ReactElement) {
+export default function toBeAccessible(
+  received: ReactElement,
+  options?: Options
+) {
+  const jestGlobalConfigs = {
+    rules: global.__A11Y_RULES__,
+    customViolationHandler: global.__CUSTOM_VIOLATION_HANDLER__,
+  };
+
   const violations = check(received, {
-    returnViolations: true,
+    ...jestGlobalConfigs,
+    ...options,
+    returnViolations: true, // this enforces returnViolations to always be true & must be set last
   });
 
   if (violations.length) {

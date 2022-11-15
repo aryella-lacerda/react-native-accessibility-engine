@@ -30,6 +30,6 @@
     "strict": true,
     "target": "esnext"
   },
-  "include": ["src"],
+  "include": ["src", "globals.d.ts"],
   "exclude": ["example"]
 }

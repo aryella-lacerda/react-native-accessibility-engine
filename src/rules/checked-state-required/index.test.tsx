@@ -5,7 +5,7 @@ import check from '../../engine';
 import TestAssets from '@tests/assets';
 
 const run = (component: React.ReactElement<any>) => {
-  return check(component, { rules: [rule] });
+  return check(component, { rules: [rule.id] });
 };
 
 describe('given a pressable component with an accessibility role of "checkbox"', () => {

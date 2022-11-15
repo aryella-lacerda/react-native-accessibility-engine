@@ -31,7 +31,7 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-    - [Goals](#goals)
+  - [Goals](#goals)
 - [How to use](#how-to-use)
   - [Installation](#installation)
     - [React >= 18](#react--18)
@@ -39,9 +39,12 @@ Make accessibility-related assertions in React Native
   - [Configuration](#configuration)
     - [Javascript](#javascript)
     - [Typescript](#typescript)
-  - [Usage](#usage)
+  - [General Usage](#general-usage)
     - [With React elements](#with-react-elements)
     - [With React test instances](#with-react-test-instances)
+  - [Usage with custom rules or violation handlers](#usage-with-custom-rules-or-violation-handlers)
+    - [Custom default behaviors](#custom-default-behaviors)
+    - [Per matcher overrides](#per-matcher-overrides)
 - [Migration guides](#migration-guides)
   - [From 0.x to 1.x](#from-0x-to-1x)
   - [From 1.x to 2.x](#from-1x-to-2x)
@@ -123,7 +126,7 @@ You need to import `react-native-accessibilit-engine` at least once in your code
 import 'react-native-accessibility-engine';
 ```
 
-## Usage
+## General Usage
 
 ### With React elements
 
@@ -172,6 +175,68 @@ it('should be accessible, using @testing-library/react-native', () => {
   const { getByA11yRole } = render(<Test />);
   const button = getByA11yRole('button');
   expect(button).toBeAccessible();
+});
+```
+
+## Usage with custom rules or violation handlers
+
+| Option                 | Description                                                                                                         | Default   |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------- | --------- |
+| rules                  | Pass an array of rule ids you wish to _enable_ for your jest test. See rule ids in Current Rules section of Readme. | all rules |
+| customViolationHandler | Overrides the return of the jest matcher to have a custom handling with the violation array.                        | n/a       |
+
+### Custom default behaviors
+
+These changes will apply for every usage of the `.toBeAccessible` matcher. This would be useful for repetitive configurations. Individual overrides can still be used (as shown in the section below) to change individual behavior from the custom default behavior.
+
+`customViolationHandler` and `rules` can be customized in `jest.setup.ts|js`:
+
+```tsx
+global.__CUSTOM_VIOLATION_HANDLER__ = (violations) => {
+  console.log('violations', violations);
+
+  return violations;
+};
+
+global.__A11Y_RULES__ = [`no-empty-text`];
+```
+
+`rules` can also be configured in`jest.config.ts|js`, or `package.json` using jest `globals` (See [globals](https://jestjs.io/docs/configuration#globals-object)).
+
+```tsx
+ "globals": {
+      "__A11Y_RULES__": ["no-empty-text"]
+    }
+```
+
+### Per matcher overrides
+
+We can run `.toBeAccessible` and pass one or more of these options to customize the behavior of the jest matcher for the individual execution of that matcher.
+
+Available options:
+
+```tsx
+export type Options = {
+  // Pass in the subset of rules you want to run
+  rules?: RuleId[];
+  // Utilize for custom handling of jest test matcher output
+  customViolationHandler?: (violations: Violation[]) => Violation[];
+};
+```
+
+Example usage:
+
+```tsx
+it('should be accessible, only run against no-empty-text rule', () => {
+  expect(button).toBeAccessible({ rules: ['no-empty-text'] });
+});
+
+it('should be accessible, and handle violations uniquely', () => {
+  const customViolationHandler = (violations) => {
+    console.error(violations);
+    return [];
+  };
+  expect(button).toBeAccessible({ customViolationHandler });
 });
 ```
 
