@@ -31,7 +31,7 @@ Make accessibility-related assertions in React Native
 ## Table of Contents
 
 - [Intro](#intro)
-    - [Goals](#goals)
+  - [Goals](#goals)
 - [How to use](#how-to-use)
   - [Installation](#installation)
     - [React >= 18](#react--18)
@@ -254,6 +254,7 @@ yarn add react-native-accessibility-engine react-test-renderer --dev
 | pressable-label-required      | If a button has no text content, an accessibility label can't be inferred so we should explicitly define one  |
 | adjustable-role-required      | If a component has a value that can be adjusted, we should inform the user that it is adjustable              |
 | adjustable-value-required     | If a component has a value that can be adjusted, we should inform the user of its min, max, and current value |
+| checked-state-required        | If a component has an accessibilityRole of 'checkbox', we should inform the user of the check state           |
 | disabled-state-required       | If a component has a disabled state, we should expose its enabled/disabled state to the user                  |
 | no-empty-text                 | If a text node doesn't contain text, we should add text or prevent it from rendering when it has no content   |
 
